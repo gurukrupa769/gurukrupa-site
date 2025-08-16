@@ -7,7 +7,7 @@ if (carousel) {
   });
 }
 
-// Tab navigation
+// Tab navigation with fade effect
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabSections = document.querySelectorAll('.tab-section');
 
@@ -15,18 +15,21 @@ tabLinks.forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
 
-    // Remove active class from all links
     tabLinks.forEach(l => l.classList.remove('active'));
     this.classList.add('active');
 
-    // Hide all sections
-    tabSections.forEach(sec => sec.style.display = 'none');
+    tabSections.forEach(sec => {
+      sec.style.opacity = 0;
+      sec.style.display = 'none';
+    });
 
-    // Show the selected tab section
     const tabId = this.getAttribute('data-tab');
-    document.getElementById(tabId).style.display = 'block';
+    const section = document.getElementById(tabId);
+    section.style.display = 'block';
+    setTimeout(() => section.style.opacity = 1, 50);
   });
 });
 
 // Show home section by default
 document.getElementById('home').style.display = 'block';
+document.getElementById('home').style.opacity = 1;
