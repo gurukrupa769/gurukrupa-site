@@ -11,9 +11,6 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,7 +24,7 @@
 </header>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top neon-nav">
+<nav class="navbar navbar-expand-lg navbar-dark neon-nav sticky-top">
   <div class="container">
     <a class="navbar-brand neon-text" href="#">Gurukrupa Xerox & Soham Multiservices</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -53,18 +50,33 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="images/brotherprinter.jpg" class="d-block w-100 slider-img" alt="Brother Printer">
+        <div class="carousel-caption d-md-block">
+          <h5>High-Quality Xerox & Printing</h5>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="images/canonprinter.jpg" class="d-block w-100 slider-img" alt="Canon Printer">
+        <div class="carousel-caption d-md-block">
+          <h5>Color & Black-White Printing</h5>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="images/kyoceraprinter.jpg" class="d-block w-100 slider-img" alt="Kyocera Printer">
+        <div class="carousel-caption d-md-block">
+          <h5>Efficient Printing Solutions</h5>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="images/laminationmachine.jpg" class="d-block w-100 slider-img" alt="Lamination Machine">
+        <div class="carousel-caption d-md-block">
+          <h5>Professional Lamination Services</h5>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="images/monitor.jpg" class="d-block w-100 slider-img" alt="Monitor">
+        <div class="carousel-caption d-md-block">
+          <h5>Computer & Office Services</h5>
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#shopCarousel" data-bs-slide="prev">
@@ -86,24 +98,27 @@
 <section id="services" class="tab-section container my-5" style="display:none;">
   <h2 class="text-center mb-4 glow-text">Our Services</h2>
   <div class="row text-center">
+    <!-- Xerox & Printing -->
     <div class="col-md-4 mb-3">
-      <div class="card service-card text-white">
-        <i class="fas fa-print fa-3x mb-2 glow-text"></i>
-        <h4 class="fw-bold">Xerox & Printing</h4>
+      <div class="card service-card text-center">
+        <img src="images/kyoceraprinter.jpg" alt="Kyocera Printer" class="service-img mb-2">
+        <h4 class="fw-bold glow-text">Xerox & Printing</h4>
         <p class="fw-bold">Black & white and color printing with sharp clarity.</p>
       </div>
     </div>
+    <!-- Lamination -->
     <div class="col-md-4 mb-3">
-      <div class="card service-card text-white">
-        <i class="fas fa-scroll fa-3x mb-2 glow-text"></i>
-        <h4 class="fw-bold">Lamination</h4>
+      <div class="card service-card text-center">
+        <img src="images/laminationmachine.jpg" alt="Lamination Machine" class="service-img mb-2">
+        <h4 class="fw-bold glow-text">Lamination</h4>
         <p class="fw-bold">Protect your documents with high-quality lamination.</p>
       </div>
     </div>
+    <!-- Computer Services -->
     <div class="col-md-4 mb-3">
-      <div class="card service-card text-white">
-        <i class="fas fa-desktop fa-3x mb-2 glow-text"></i>
-        <h4 class="fw-bold">Computer Services</h4>
+      <div class="card service-card text-center">
+        <img src="images/monitor.jpg" alt="Computer Services" class="service-img mb-2">
+        <h4 class="fw-bold glow-text">Computer Services</h4>
         <p class="fw-bold">Typing, scanning, online forms, and more.</p>
       </div>
     </div>
@@ -135,7 +150,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="text-center py-3 glow-text">
+<footer class="text-center py-3 glass-panel">
   <p>&copy; 2025 Gurukrupa Xerox And Soham Multiservices | All Rights Reserved</p>
 </footer>
 
