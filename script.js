@@ -1,4 +1,4 @@
-// Auto slide every 3 seconds
+// Bootstrap Carousel auto-slide
 const carousel = document.querySelector('#shopCarousel');
 if (carousel) {
   const bsCarousel = new bootstrap.Carousel(carousel, {
@@ -6,3 +6,14 @@ if (carousel) {
     ride: 'carousel'
   });
 }
+
+// Scroll animations
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY + window.innerHeight - 100;
+  sections.forEach(section => {
+    if (scrollPos > section.offsetTop) {
+      section.classList.add('visible');
+    }
+  });
+});
