@@ -7,7 +7,7 @@ if (carousel) {
   });
 }
 
-// Tabs
+// Tab navigation
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabSections = document.querySelectorAll('.tab-section');
 
@@ -16,45 +16,55 @@ tabLinks.forEach(link => {
     e.preventDefault();
     tabLinks.forEach(l => l.classList.remove('active'));
     this.classList.add('active');
-    tabSections.forEach(sec => sec.style.display = 'none');
     const tabId = this.getAttribute('data-tab');
+    tabSections.forEach(sec => sec.style.display = 'none');
     document.getElementById(tabId).style.display = 'block';
   });
 });
 
 // Chatbot
-const chatForm = document.getElementById('chat-form');
+const chatButton = document.getElementById('chatbot-button');
+const chatWindow = document.getElementById('chatbot-window');
+const chatClose = document.getElementById('chat-close');
+const chatSend = document.getElementById('chat-send');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
 
-chatForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const userMsg = chatInput.value.trim();
-  if(!userMsg) return;
-  
-  // Display user message
-  const userDiv = document.createElement('div');
-  userDiv.classList.add('user-msg');
-  userDiv.textContent = userMsg;
-  chatMessages.appendChild(userDiv);
+chatButton.addEventListener('click', () => chatWindow.style.display = 'flex');
+chatClose.addEventListener('click', () => chatWindow.style.display = 'none');
+
+async function sendMessage() {
+  const message = chatInput.value.trim();
+  if(!message) return;
+
+  const userMsg = document.createElement('div');
+  userMsg.textContent = "You: " + message;
+  chatMessages.appendChild(userMsg);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+
   chatInput.value = '';
 
-  // Send to server
   try {
-    const response = await fetch('http://localhost:3000/chat', {
+    const res = await fetch('http://localhost:3000/chat', {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({message: userMsg})
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
     });
-    const data = await response.json();
+    const data = await res.json();
 
-    const botDiv = document.createElement('div');
-    botDiv.classList.add('bot-msg');
-    botDiv.textContent = data.reply;
-    chatMessages.appendChild(botDiv);
+    const botMsg = document.createElement('div');
+    botMsg.textContent = "Bot: " + data.reply;
+    chatMessages.appendChild(botMsg);
     chatMessages.scrollTop = chatMessages.scrollHeight;
-  } catch (err) {
+  } catch(err) {
     console.error(err);
+    const botMsg = document.createElement('div');
+    botMsg.textContent = "Bot: Error connecting to server.";
+    chatMessages.appendChild(botMsg);
   }
+}
+
+chatSend.addEventListener('click', sendMessage);
+chatInput.addEventListener('keypress', (e) => {
+  if(e.key === 'Enter') sendMessage();
 });
