@@ -1,132 +1,97 @@
+/* General */
 body {
-  font-family: Arial, sans-serif;
-  background: #0b0c0f;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f0f0f;
   color: #fff;
 }
 
-/* Slider Images */
+/* Header */
+.glow-text {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+/* Slider */
 .slider-img {
   height: 400px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #0ff inset;
 }
 
 /* Gallery */
 .gallery-img {
   border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0,255,255,0.3);
-  transition: transform 0.3s;
+  box-shadow: 0px 2px 15px #0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .gallery-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0px 2px 25px #0ff;
 }
 
 /* Cards */
 .card.glow-card {
-  border-radius: 10px;
-  box-shadow: 0px 0 15px #0ff, 0 0 30px #0ff inset;
-  transition: 0.3s;
-}
-.card.glow-card:hover {
-  transform: scale(1.05);
-}
-
-/* Glowing Text */
-.glow-text {
-  color: #0ff;
-  font-weight: 700;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-  animation: glowPulse 2s infinite alternate;
-}
-@keyframes glowPulse {
-  0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
-  50% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
-  100% { text-shadow: 0 0 25px #0ff, 0 0 50px #0ff; }
-}
-
-/* Glass Inputs */
-.glow-input {
-  background: rgba(0,255,255,0.05);
-  border: 1px solid #0ff;
-  border-radius: 12px;
-  padding: 12px;
-  color: #fff;
-  box-shadow: 0 0 10px #0ff;
-  transition: 0.3s;
-}
-.glow-input:focus {
-  outline: none;
-  border-color: #0ff;
-  box-shadow: 0 0 25px #0ff;
-}
-
-/* Labels */
-.glow-label {
-  color: #0ff;
-  font-weight: 600;
-  text-shadow: 0 0 5px #0ff;
-}
-
-/* File Drag & Drop */
-.file-drop-zone {
-  border: 2px dashed #0ff;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-  cursor: pointer;
-  color: #0ff;
-  box-shadow: 0 0 15px rgba(0,255,255,0.3);
-  transition: 0.3s;
-  position: relative;
-}
-.file-drop-zone input[type="file"] {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-.file-drop-zone:hover {
-  box-shadow: 0 0 35px #0ff, 0 0 60px #0ff inset;
-}
-
-/* Glowing multi-file previews */
-.glow-file-preview-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.glow-file {
-  padding: 10px 15px;
-  border: 1px solid #0ff;
-  border-radius: 10px;
-  background: rgba(0,255,255,0.05);
-  color: #0ff;
-  font-weight: bold;
-  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
-  animation: pulseGlow 2s infinite alternate;
-  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
-  cursor: default;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 20px #0ff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.glow-file:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+.card.glow-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px #0ff;
 }
 
-/* Buttons */
+/* Order Form */
+.glass-panel {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0,255,255,0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #0ff inset;
+}
+
+.glow-input {
+  background: rgba(0,0,0,0.2);
+  color: #0ff;
+  border: 1px solid #0ff;
+  border-radius: 10px;
+}
+
+.glow-label {
+  color: #0ff;
+  font-weight: bold;
+}
+
 .futuristic-btn {
-  background: #0ff;
+  background: linear-gradient(90deg, #00ffff, #00ff99);
   color: #000;
   font-weight: bold;
   border: none;
-  border-radius: 12px;
-  padding: 10px 25px;
-  box-shadow: 0 0 15px #0ff;
-  transition: 0.3s;
+  padding: 10px 30px;
+  border-radius: 50px;
+  box-shadow: 0 0 20px #0ff;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .futuristic-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #0ff, 0 0 50px #0ff inset;
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #0ff, 0 0 80px #0ff;
+}
+
+/* File drop */
+.file-drop-zone {
+  border: 2px dashed #0ff;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+.glow-file-preview-container .glow-file {
+  color: #0ff;
+  margin: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  border: 1px solid #0ff;
+  border-radius: 5px;
+  text-shadow: 0 0 5px #0ff;
 }
