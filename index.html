@@ -18,15 +18,15 @@
 
 <!-- Hero Section -->
 <header class="hero d-flex flex-column justify-content-center align-items-center text-center">
-  <h1 class="hero-title flicker">Gurukrupa Xerox And Soham Multiservices</h1>
-  <p class="hero-subtitle flicker2">Reliable Service | Best Quality | Affordable Price</p>
+  <h1 class="hero-title glow-text">Gurukrupa Xerox And Soham Multiservices</h1>
+  <p class="hero-subtitle glow-text">Reliable Service | Best Quality | Affordable Price</p>
   <a href="#contact" class="btn futuristic-btn mt-3">📞 Call Now</a>
 </header>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark neon-nav sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand neon-text" href="#">Gurukrupa Xerox & Soham Multiservices</a>
+    <a class="navbar-brand" href="#">Gurukrupa Xerox & Soham Multiservices</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,6 +37,7 @@
         <li class="nav-item"><a class="nav-link tab-link" data-tab="services" href="#">Services</a></li>
         <li class="nav-item"><a class="nav-link tab-link" data-tab="gallery" href="#">Gallery</a></li>
         <li class="nav-item"><a class="nav-link tab-link" data-tab="contact" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link tab-link" data-tab="chatbot" href="#">Chat</a></li>
       </ul>
     </div>
   </div>
@@ -49,19 +50,19 @@
   <div id="shopCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="images/brotherprinter.jpeg" class="d-block w-100 slider-img" alt="Brother Printer">
+        <img src="images/brotherprinter.jpg" class="d-block w-100 slider-img" alt="Brother Printer">
         <div class="carousel-caption d-md-block">
           <h5>High-Quality Xerox & Printing</h5>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="images/canonprinter.jpeg" class="d-block w-100 slider-img" alt="Canon Printer">
+        <img src="images/canonprinter.jpg" class="d-block w-100 slider-img" alt="Canon Printer">
         <div class="carousel-caption d-md-block">
           <h5>Color & Black-White Printing</h5>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="images/kyoceraprinter.jpeg" class="d-block w-100 slider-img" alt="Kyocera Printer">
+        <img src="images/kyoceraprinter.jpg" class="d-block w-100 slider-img" alt="Kyocera Printer">
         <div class="carousel-caption d-md-block">
           <h5>Efficient Printing Solutions</h5>
         </div>
@@ -98,27 +99,24 @@
 <section id="services" class="tab-section container my-5" style="display:none;">
   <h2 class="text-center mb-4 glow-text">Our Services</h2>
   <div class="row text-center">
-    <!-- Xerox & Printing -->
     <div class="col-md-4 mb-3">
-      <div class="card service-card text-center">
-        <img src="images/kyoceraprinter.jpg" alt="Kyocera Printer" class="service-img mb-2">
-        <h4 class="fw-bold glow-text">Xerox & Printing</h4>
+      <div class="card glow-card p-3 text-white">
+        <h4 class="fw-bold">Xerox & Printing</h4>
+        <img src="images/kyoceraprinter.jpg" class="img-fluid my-2" alt="Kyocera Printer">
         <p class="fw-bold">Black & white and color printing with sharp clarity.</p>
       </div>
     </div>
-    <!-- Lamination -->
     <div class="col-md-4 mb-3">
-      <div class="card service-card text-center">
-        <img src="images/laminationmachine.jpg" alt="Lamination Machine" class="service-img mb-2">
-        <h4 class="fw-bold glow-text">Lamination</h4>
+      <div class="card glow-card p-3 text-white">
+        <h4 class="fw-bold">Lamination</h4>
+        <img src="images/laminationmachine.jpg" class="img-fluid my-2" alt="Lamination">
         <p class="fw-bold">Protect your documents with high-quality lamination.</p>
       </div>
     </div>
-    <!-- Computer Services -->
     <div class="col-md-4 mb-3">
-      <div class="card service-card text-center">
-        <img src="images/monitor.jpg" alt="Computer Services" class="service-img mb-2">
-        <h4 class="fw-bold glow-text">Computer Services</h4>
+      <div class="card glow-card p-3 text-white">
+        <h4 class="fw-bold">Computer Services</h4>
+        <img src="images/monitor.jpg" class="img-fluid my-2" alt="Computer Services">
         <p class="fw-bold">Typing, scanning, online forms, and more.</p>
       </div>
     </div>
@@ -149,6 +147,16 @@
   </div>
 </section>
 
+<!-- Chatbot -->
+<section id="chatbot" class="tab-section container my-5" style="display:none;">
+  <h2 class="text-center mb-4 glow-text">Chat with us</h2>
+  <div class="chat-container text-start">
+    <div id="chat-messages" class="chat-messages mb-3"></div>
+    <input type="text" id="chat-input" class="glow-input w-100" placeholder="Type your message here...">
+    <button id="chat-send" class="futuristic-btn mt-2">Send</button>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="text-center py-3 glass-panel">
   <p>&copy; 2025 Gurukrupa Xerox And Soham Multiservices | All Rights Reserved</p>
@@ -159,4 +167,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
