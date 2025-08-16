@@ -2,75 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Xerox & Printing Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gurukrupa Xerox & Soham Multiservices</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- Sticky Header with Navigation & Branding -->
   <header>
-    <h1>Welcome to My Xerox & Printing Shop</h1>
-    <p>Your one-stop solution for printing, photocopy, and lamination</p>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">GX</div>
+        <div>
+          <h1>Gurukrupa Xerox</h1>
+          <small>& Soham Multiservices</small>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta-buttons">
+        <a href="tel:+91XXXXXXXXXX" class="btn outline">Call</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn primary">WhatsApp</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Hero Section with Sliding Images -->
+  <main id="home" class="hero container">
+    <div class="carousel">
+      <div class="slides">
+        <img src="images/monitor.jpg" alt="Shop Computer & Desk">
+        <img src="images/canonprinter.jpg" alt="Canon Color Printer">
+        <img src="images/laminationmachine.jpg" alt="Lamination Machine">
+        <img src="images/brotherprinter.jpg" alt="Brother B/W Printer">
+        <img src="images/kyoceraprinter.jpg" alt="Kyocera Printer">
+      </div>
+      <button class="ctrl prev">‹</button>
+      <button class="ctrl next">›</button>
+      <div class="dots"></div>
+    </div>
+    <div class="hero-text">
+      <span class="tag">★ Trusted Local Service</span>
+      <h2>Fast & Reliable Xerox, Printing, & Lamination</h2>
+      <p>Your one-stop for form filling, pagar bill making, printing, and more—under one roof.</p>
+    </div>
+  </main>
 
   <!-- Services Section -->
-  <section id="services">
+  <section id="services" class="section container">
     <h2>Our Services</h2>
-    <ul>
-      <li>Xerox & Photocopy</li>
-      <li>Printing (B/W & Color)</li>
-      <li>Lamination</li>
-      <li>Scanning</li>
-    </ul>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="gallery">
-      <div class="item">
-        <img src="images/brotherprinter.jpg" alt="Brother Printer">
-        <p>Brother Printer</p>
+    <div class="grid services">
+      <div class="card">
+        <h3>Online Form Filling</h3>
       </div>
-      <div class="item">
-        <img src="images/canonprinter.jpg" alt="Canon Printer">
-        <p>Canon Printer</p>
+      <div class="card">
+        <h3>Pagar Bill Making</h3>
       </div>
-      <div class="item">
-        <img src="images/kyoceraprinter.jpg" alt="Kyocera Printer">
-        <p>Kyocera Printer</p>
+      <div class="card">
+        <h3>Color & B/W Printing</h3>
       </div>
-      <div class="item">
-        <img src="images/laminationmachine.jpg" alt="Lamination Machine">
-        <p>Lamination Machine</p>
-      </div>
-      <div class="item">
-        <img src="images/monitor.jpg" alt="Monitor">
-        <p>Monitor</p>
+      <div class="card">
+        <h3>Lamination</h3>
       </div>
     </div>
   </section>
 
+  <!-- Facilities Section -->
+  <section id="facilities" class="section container facilities">
+    <h2>Facilities</h2>
+    <div class="grid facilities-cards">
+      <div class="card">
+        <h3>CCTV Security</h3>
+      </div>
+      <div class="card">
+        <h3>Parking Available</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section container gallery-section">
+    <h2>Gallery</h2>
+    <div class="grid gallery">
+      <img src="images/monitor.jpg" alt="">
+      <img src="images/canonprinter.jpg" alt="">
+      <img src="images/laminationmachine.jpg" alt="">
+      <img src="images/brotherprinter.jpg" alt="">
+      <img src="images/kyoceraprinter.jpg" alt="">
+    </div>
+  </section>
+
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="section container contact">
     <h2>Contact Us</h2>
-    <p>Visit us at: Main Road, City Market</p>
-    <p>Phone: +91 9876543210</p>
-    <p>Email: myshop@example.com</p>
+    <p>Phone: <a href="tel:+91XXXXXXXXXX"> +91 XXXXXXXXXX</a></p>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>Address: YOUR SHOP ADDRESS, City, Pincode</p>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 My Xerox & Printing Shop. All rights reserved.</p>
+  <footer class="container">
+    <p>© <span id="year"></span> Gurukrupa Xerox & Soham Multiservices. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
