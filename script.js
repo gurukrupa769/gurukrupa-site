@@ -1,4 +1,4 @@
-// ---------- Carousel ----------
+// Slider carousel
 const carousel = document.querySelector('#shopCarousel');
 if (carousel) {
   const bsCarousel = new bootstrap.Carousel(carousel, {
@@ -7,70 +7,54 @@ if (carousel) {
   });
 }
 
-// ---------- Tab Navigation ----------
+// Tabs
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabSections = document.querySelectorAll('.tab-section');
 
 tabLinks.forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
-
-    // Remove active class from all links
     tabLinks.forEach(l => l.classList.remove('active'));
     this.classList.add('active');
-
-    // Hide all sections
     tabSections.forEach(sec => sec.style.display = 'none');
-
-    // Show the selected tab section
     const tabId = this.getAttribute('data-tab');
     document.getElementById(tabId).style.display = 'block';
   });
 });
 
-// ---------- Chatbot ----------
+// Chatbot
 const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
-const chatbox = document.getElementById('chatbox');
+const chatMessages = document.getElementById('chat-messages');
 
-async function sendMessage(message) {
-  // Show user message
-  const userMsg = document.createElement('div');
-  userMsg.classList.add('chat-msg', 'chat-user');
-  userMsg.innerText = message;
-  chatbox.appendChild(userMsg);
-  chatbox.scrollTop = chatbox.scrollHeight;
+chatForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const userMsg = chatInput.value.trim();
+  if(!userMsg) return;
+  
+  // Display user message
+  const userDiv = document.createElement('div');
+  userDiv.classList.add('user-msg');
+  userDiv.textContent = userMsg;
+  chatMessages.appendChild(userDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  chatInput.value = '';
 
-  // Fetch response from server
+  // Send to server
   try {
-    const res = await fetch('/chat', {
+    const response = await fetch('http://localhost:3000/chat', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message })
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({message: userMsg})
     });
-    const data = await res.json();
-    const botMsg = document.createElement('div');
-    botMsg.classList.add('chat-msg', 'chat-bot');
-    botMsg.innerText = data.reply;
-    chatbox.appendChild(botMsg);
-    chatbox.scrollTop = chatbox.scrollHeight;
+    const data = await response.json();
+
+    const botDiv = document.createElement('div');
+    botDiv.classList.add('bot-msg');
+    botDiv.textContent = data.reply;
+    chatMessages.appendChild(botDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   } catch (err) {
     console.error(err);
-    const botMsg = document.createElement('div');
-    botMsg.classList.add('chat-msg', 'chat-bot');
-    botMsg.innerText = "Error: Could not get response.";
-    chatbox.appendChild(botMsg);
-    chatbox.scrollTop = chatbox.scrollHeight;
   }
-}
-
-if (chatForm) {
-  chatForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const message = chatInput.value.trim();
-    if (message) {
-      sendMessage(message);
-      chatInput.value = '';
-    }
-  });
-}
+});
