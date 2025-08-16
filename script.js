@@ -1,47 +1,90 @@
-// Year update
-document.getElementById('year').textContent = new Date().getFullYear();
+// Insert current year
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Carousel logic
-const slides = document.querySelector('.slides');
-const imagesCount = slides.children.length;
-const dots = document.querySelector('.dots');
-let index = 0, timer;
+// Carousel (slides)
+const slidesWrap = document.querySelector('.slides');
+const slides = document.querySelectorAll('.slide');
+const dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let slideIndex = 0, slideTimer = null;
 
-function showSlide(i) {
-  index = (i + imagesCount) % imagesCount;
-  slides.style.transform = `translateX(-${index*100}%)`;
-  updateDots();
-  resetTimer();
-}
-
-function setupDots() {
-  for (let i = 0; i < imagesCount; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'dot' + (!i ? ' active' : '');
-    dot.addEventListener('click', () => showSlide(i));
-    dots.appendChild(dot);
+function updateSlides() {
+  slidesWrap.style.transform = `translateX(-${slideIndex * 100}%)`;
+  // update dots
+  if (dotsWrap) {
+    [...dotsWrap.children].forEach((d,i)=> d.classList.toggle('active', i===slideIndex));
   }
 }
 
-function updateDots() {
-  [...dots.children].forEach((d, i) => d.classList.toggle('active', i === index));
+function goTo(i){
+  slideIndex = (i + slides.length) % slides.length;
+  updateSlides();
+  resetTimer();
 }
 
-document.querySelector('.prev').onclick = () => showSlide(index - 1);
-document.querySelector('.next').onclick = () => showSlide(index + 1);
+function next(){ goTo(slideIndex + 1) }
+function prev(){ goTo(slideIndex - 1) }
 
-function resetTimer() {
-  clearInterval(timer);
-  timer = setInterval(() => showSlide(index + 1), 3500);
+function resetTimer(){
+  clearInterval(slideTimer);
+  slideTimer = setInterval(next, 3500);
 }
 
-setupDots();
+// build dots
+if (dotsWrap) {
+  slides.forEach((s,i)=>{
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===0 ? ' active' : '');
+    d.addEventListener('click', ()=> goTo(i));
+    dotsWrap.appendChild(d);
+  });
+}
+
+// Prev/next events
+if (prevBtn) prevBtn.addEventListener('click', prev);
+if (nextBtn) nextBtn.addEventListener('click', next);
+
+// touch support
+let startX = null;
+slidesWrap.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive:true});
+slidesWrap.addEventListener('touchend', e => {
+  if (startX === null) return;
+  const dx = e.changedTouches[0].clientX - startX;
+  if (Math.abs(dx) > 40) dx < 0 ? next() : prev();
+  startX = null;
+}, {passive:true});
+
+// start autoplay
 resetTimer();
 
-// Smooth scroll
-document.querySelectorAll('nav a').forEach(a => {
-  a.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+// scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      io.unobserve(entry.target);
+    }
   });
+}, {threshold: 0.18});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// smooth nav links
+document.querySelectorAll('.main-nav a').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    const id = a.getAttribute('href');
+    if (!id || id === '#') return;
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// hamburger (mobile) menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navList = document.querySelector('.main-nav ul');
+hamburger && hamburger.addEventListener('click', ()=>{
+  if (!navList) return;
+  navList.style.display = (navList.style.display === 'flex') ? 'none' : 'flex';
 });
