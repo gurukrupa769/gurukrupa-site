@@ -7,7 +7,7 @@ if (carousel) {
   });
 }
 
-// Tab navigation with fade-in
+// Tab navigation
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabSections = document.querySelectorAll('.tab-section');
 
@@ -22,21 +22,18 @@ tabLinks.forEach(link => {
     // Hide all sections
     tabSections.forEach(sec => sec.style.display = 'none');
 
-    // Show the selected tab section with fade
+    // Show the selected tab section
     const tabId = this.getAttribute('data-tab');
     const section = document.getElementById(tabId);
-    section.style.display = 'block';
     section.style.opacity = 0;
-    let op = 0;
-    const fade = setInterval(() => {
-      op += 0.05;
-      section.style.opacity = op;
-      if(op >=1) clearInterval(fade);
+    section.style.display = 'block';
+
+    // Fade-in effect
+    let opacity = 0;
+    const fadeIn = setInterval(() => {
+      opacity += 0.05;
+      section.style.opacity = opacity;
+      if(opacity >= 1) clearInterval(fadeIn);
     }, 20);
   });
-});
-
-// Initialize Home tab by default
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.tab-link.active').click();
 });
