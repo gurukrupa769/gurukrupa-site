@@ -1,11 +1,8 @@
-// Small interactivity
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Website Loaded Successfully!");
-
-  const links = document.querySelectorAll("nav a");
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      alert(`Navigating to ${link.textContent} section`);
-    });
+// Simple script: Smooth scrolling effect
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
   });
 });
