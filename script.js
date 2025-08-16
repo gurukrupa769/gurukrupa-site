@@ -15,41 +15,72 @@ tabLinks.forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
 
+    // Remove active class
     tabLinks.forEach(l => l.classList.remove('active'));
     this.classList.add('active');
 
+    // Hide all sections
     tabSections.forEach(sec => sec.style.display = 'none');
 
+    // Show selected tab
     const tabId = this.getAttribute('data-tab');
     document.getElementById(tabId).style.display = 'block';
   });
 });
 
-// Chatbot
-const chatSendBtn = document.getElementById("chat-send");
-const chatInput = document.getElementById("chat-input");
-const chatMessages = document.getElementById("chat-messages");
+// Chatbot toggle
+const chatbotToggle = document.getElementById("chatbot-toggle");
+const chatbotBox = document.getElementById("chatbot-box");
 
+chatbotToggle.addEventListener("click", () => {
+  chatbotBox.style.display = chatbotBox.style.display === "none" ? "flex" : "none";
+});
+
+// Chatbot messages
+const chatMessages = document.getElementById("chatMessages");
+const chatInput = document.getElementById("chatInput");
+const chatSendBtn = document.getElementById("chatSendBtn");
+
+function appendMessage(sender, text) {
+  const msgDiv = document.createElement("div");
+  msgDiv.classList.add(sender.toLowerCase());
+
+  if(sender === "Bot") {
+    let i = 0;
+    msgDiv.innerHTML = "";
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    function typeWriter() {
+      if(i < text.length) {
+        msgDiv.innerHTML += text.charAt(i);
+        i++;
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        setTimeout(typeWriter, 20);
+      }
+    }
+    typeWriter();
+  } else {
+    msgDiv.innerHTML = text;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+}
+
+// Send chat
 chatSendBtn.addEventListener("click", async () => {
   const message = chatInput.value.trim();
   if (!message) return;
 
-  appendMessage("You", message);
+  appendMessage("User", message);
   chatInput.value = "";
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("http://localhost:3000/chat", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: message }]
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
     });
-
     const data = await response.json();
     const reply = data.choices[0].message.content;
     appendMessage("Bot", reply);
@@ -57,11 +88,3 @@ chatSendBtn.addEventListener("click", async () => {
     appendMessage("Bot", "Error connecting to OpenAI.");
   }
 });
-
-function appendMessage(sender, text) {
-  const msgDiv = document.createElement("div");
-  msgDiv.classList.add("mb-2");
-  msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
-  chatMessages.appendChild(msgDiv);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
