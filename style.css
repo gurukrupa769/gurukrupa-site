@@ -105,12 +105,3 @@ footer {
   border-radius: 15px;
   box-shadow: 0 0 20px #0ff;
 }
-
-/* Tab section fade animation */
-.tab-section {
-  animation: fadeIn 0.6s ease;
-}
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
