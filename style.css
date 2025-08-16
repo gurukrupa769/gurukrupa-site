@@ -24,4 +24,48 @@ body {
 /* Cards */
 .card.glow-card {
   border-radius: 10px;
-  box-shadow: 0 0 15
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff inset;
+  transition: 0.3s;
+}
+.card.glow-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff, 0 0 50px #0ff inset;
+}
+
+/* Glowing Text */
+.glow-text {
+  color: #0ff;
+  font-weight: 700;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  animation: glowPulse 2s infinite alternate;
+}
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+  50% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
+  100% { text-shadow: 0 0 25px #0ff, 0 0 50px #0ff; }
+}
+
+/* Buttons */
+.futuristic-btn {
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 25px;
+  box-shadow: 0 0 15px #0ff;
+  transition: 0.3s;
+}
+.futuristic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff, 0 0 50px #0ff inset;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px #0ff inset;
+}
