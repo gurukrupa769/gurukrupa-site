@@ -1,19 +1,19 @@
-// Bootstrap Carousel
+// Bootstrap Carousel auto slide
 const carousel = document.querySelector('#shopCarousel');
 if(carousel){
   const bsCarousel = new bootstrap.Carousel(carousel,{
-    interval:3000,
+    interval:4000,
     ride:'carousel'
   });
 }
 
-// Scroll animations
-const sections = document.querySelectorAll('section');
+// Optional: Add scroll animations for elements
 window.addEventListener('scroll',()=>{
-  const scrollPos = window.scrollY + window.innerHeight - 100;
-  sections.forEach(section=>{
-    if(scrollPos > section.offsetTop){
-      section.classList.add('visible');
+  const elements = document.querySelectorAll('[data-aos]');
+  elements.forEach(el=>{
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      el.classList.add('aos-animate');
     }
   });
 });
