@@ -1,0 +1,66 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background: #ff6600;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero img {
+  max-width: 90%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Services */
+.services {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.services ul {
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.services li {
+  padding: 8px;
+}
+
+/* Contact */
+.contact {
+  padding: 20px;
+  text-align: center;
+  background: #e8f4ff;
+}
+
+.contact p {
+  margin: 5px 0;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
