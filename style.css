@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   background: #0b0c0f;
   color: #fff;
   position: relative;
@@ -46,22 +46,24 @@ body {
 
 /* Service Images */
 .service-img {
-  height: 150px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
 }
 
 /* Gallery */
 .gallery-card img {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0,255,255,0.3);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 .gallery-card img:hover {
-  transform: scale(1.05);
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #0ff, 0 0 50px #0ff inset;
 }
 
 /* Cards */
@@ -72,6 +74,7 @@ body {
 }
 .card.glow-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 25px #0ff, 0 0 50px #0ff inset;
 }
 
 /* Glowing Text */
@@ -99,8 +102,8 @@ body {
   transition: 0.3s;
 }
 .futuristic-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #0ff, 0 0 50px #0ff inset;
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #0ff, 0 0 70px #0ff inset;
 }
 
 /* Glass Panels */
@@ -109,5 +112,5 @@ body {
   border: 1px solid #0ff;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 15px #0ff;
+  box-shadow: 0 0 20px #0ff;
 }
