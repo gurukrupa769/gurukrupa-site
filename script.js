@@ -27,6 +27,3 @@ tabLinks.forEach(link => {
     document.getElementById(tabId).style.display = 'block';
   });
 });
-
-// Initialize first visible tab
-document.getElementById('home').style.display = 'block';
