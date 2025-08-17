@@ -27,3 +27,6 @@ tabLinks.forEach(link => {
     document.getElementById(tabId).style.display = 'block';
   });
 });
+
+// Show Home section by default
+document.getElementById('home').style.display = 'block';
