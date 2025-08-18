@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gurukrupa Xerox And Soham Multiservices</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Exo+2:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- Hero Section with Neon Glowing Shop Name -->
-<header class="hero d-flex flex-column justify-content-center align-items-center text-center">
-  <h1 class="hero-title glow-text">Gurukrupa Xerox And Soham Multiservices</h1>
-  <p class="hero-subtitle glow-text">Reliable Service | Best Quality | Affordable Price</p>
-  <a href="#contact" class="btn futuristic-btn mt-3">📞 Call Now</a>
-</header>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand glow-text" href="#">Gurukrupa Xerox & Soham Multiservices</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link tab-link active" data-tab="home" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link tab-link" data-tab="about" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link tab-link" data-tab="services" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link tab-link" data-tab="gallery" href="#">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link tab-link" data-tab="contact" href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Sections -->
-
-<!-- ✅ Home / Auto-Sliding Carousel -->
+<!-- Home / Slider -->
 <section id="home" class="tab-section container my-5">
-  <div id="shopCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> <!-- auto every 3s -->
+  <div id="shopCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="images/brotherprinter.jpg" class="d-block w-100 slider-img" alt="Brother Printer">
@@ -79,7 +33,8 @@
         </div>
       </div>
     </div>
-    <!-- ✅ Keep controls if user wants manual too -->
+
+    <!-- Controls (optional, can keep if you want manual too) -->
     <button class="carousel-control-prev" type="button" data-bs-target="#shopCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
@@ -88,72 +43,3 @@
     </button>
   </div>
 </section>
-
-<!-- About -->
-<section id="about" class="tab-section container my-5 glass-panel text-center" style="display:none;">
-  <h2 class="glow-text">About Us</h2>
-  <p>We provide high-quality printing, Xerox, scanning, lamination, and computer services using modern equipment with a customer-first approach. Reliable service, affordable price, and professional experience for all our clients.</p>
-</section>
-
-<!-- Services -->
-<section id="services" class="tab-section container my-5" style="display:none;">
-  <h2 class="text-center mb-4 glow-text">Our Services</h2>
-  <div class="row text-center">
-    <div class="col-md-4 mb-3">
-      <div class="card glow-card p-3 text-white service-card">
-        <img src="images/kyoceraprinter.jpg" class="service-img mb-2" alt="Printing Service">
-        <h4 class="fw-bold glow-text">Xerox & Printing</h4>
-        <p class="fw-bold glow-text">Black & white and color printing with sharp clarity.</p>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card glow-card p-3 text-white service-card">
-        <img src="images/laminationmachine.jpg" class="service-img mb-2" alt="Lamination Service">
-        <h4 class="fw-bold glow-text">Lamination</h4>
-        <p class="fw-bold glow-text">Protect your documents with high-quality lamination.</p>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card glow-card p-3 text-white service-card">
-        <img src="images/monitor.jpg" class="service-img mb-2" alt="Computer Service">
-        <h4 class="fw-bold glow-text">Computer Services</h4>
-        <p class="fw-bold glow-text">Typing, scanning, online forms, and more.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Gallery -->
-<section id="gallery" class="tab-section container my-5" style="display:none;">
-  <h2 class="text-center mb-4 glow-text">Gallery</h2>
-  <div class="d-flex flex-wrap justify-content-start gap-3">
-    <div class="gallery-card"><img src="images/brotherprinter.jpg" alt="Brother Printer"></div>
-    <div class="gallery-card"><img src="images/canonprinter.jpg" alt="Canon Printer"></div>
-    <div class="gallery-card"><img src="images/kyoceraprinter.jpg" alt="Kyocera Printer"></div>
-    <div class="gallery-card"><img src="images/laminationmachine.jpg" alt="Lamination Machine"></div>
-    <div class="gallery-card"><img src="images/monitor.jpg" alt="Monitor"></div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="tab-section container my-5 glass-panel text-center" style="display:none;">
-  <h2 class="glow-text">Contact Us</h2>
-  <p><strong>Address:</strong> Plot no. 48, Balaji Nagar, New Bhokardan, 431114, Maharashtra</p>
-  <p><strong>Phone:</strong> 7745062299</p>
-  <p><strong>Email:</strong> narayan.katore9@gmail.com</p>
-  <a href="tel:+917745062299" class="btn futuristic-btn mb-3">📞 Call Now</a>
-  <div class="map-container mt-3">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.615181538765!2d75.77115557398507!3d20.244103914268052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bda33c9ec1ac4fb%3A0xbf3e89e049a39d66!2sGurukrupa%20Xerox%20And%20Soham%20Multiservices!5e1!3m2!1sen!2sin!4v1755335201180!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="text-center py-3 glass-panel">
-  <p>&copy; 2025 Gurukrupa Xerox And Soham Multiservices | All Rights Reserved</p>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
