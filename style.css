@@ -1,160 +1,168 @@
 /* =====================
-   Futuristic Base Theme
-===================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   Base / Typography
+   ===================== */
+:root{
+  --bg:#07080b;
+  --panel: rgba(0,0,0,0.45);
+  --cyan:#00fff7;
+  --cyan-dim: rgba(0,255,255,0.12);
+  --magenta:#ff4dd2;
+  --glass-border: rgba(0,255,255,0.12);
+  --white: #e9f8fb;
+  --accent: linear-gradient(90deg,var(--cyan),#5fb0ff,var(--magenta));
 }
-
-body {
-  background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  overflow-x: hidden;
-}
-
-/* Navbar */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  padding: 10px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  animation: slideDown 1s ease-in-out;
-}
-
-nav h1 {
-  font-size: 24px;
-  background: linear-gradient(90deg, cyan, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-nav ul li {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-nav ul li:hover {
-  color: cyan;
-  transform: scale(1.1);
-}
-
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: url('https://i.ibb.co/RYFxddk/futuristic-bg.jpg') center/cover no-repeat;
-  position: relative;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-}
-
-.hero h2 {
-  font-size: 60px;
-  color: #0ff;
-  text-shadow: 0px 0px 20px #0ff;
-  animation: glowPulse 2s infinite alternate;
-}
-
-.hero p {
-  margin-top: 15px;
-  font-size: 20px;
-  opacity: 0.8;
-}
-
-/* Sections */
-section {
-  padding: 80px 10%;
-  animation: fadeUp 1s ease-in-out;
-}
-
-section h2 {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 30px;
-  color: #ff0;
-  text-shadow: 0px 0px 10px #ff0;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px;
-  transition: 0.3s;
-  box-shadow: 0px 0px 15px rgba(0,255,255,0.3);
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0px 0px 30px rgba(0,255,255,0.7);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: rgba(0,0,0,0.8);
-  border-top: 2px solid cyan;
-  font-size: 14px;
-  color: #aaa;
-}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;font-family:'Poppins', Arial, sans-serif;background:var(--bg);color:var(--white);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 
 /* =====================
-   ANIMATIONS
-===================== */
-@keyframes glowPulse {
-  from { text-shadow: 0 0 10px #0ff; }
-  to   { text-shadow: 0 0 30px #0ff; }
+   Preloader + small loader ring
+   ===================== */
+#preloader{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  background:radial-gradient(circle at 30% 20%, rgba(0,255,255,0.03), transparent 20%), rgba(0,0,0,0.75);
+  gap:14px;
+}
+.loader-ring{
+  width:84px;height:84px;border-radius:50%;
+  border:6px solid rgba(255,255,255,0.06);
+  border-top-color:var(--cyan);
+  animation:spin 1s linear infinite;
+  box-shadow:0 0 18px rgba(0,255,255,0.18);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+#preloader .small{color:var(--cyan);letter-spacing:1px;font-weight:700}
+
+/* =====================
+   Particle Canvas + Floating Shapes
+   ===================== */
+#particlesCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-3;pointer-events:none}
+.floating-shapes{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-2;pointer-events:none;overflow:hidden;mix-blend-mode:screen}
+.floating-shapes span{position:absolute;width:var(--s,120px);height:var(--s,120px);border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, rgba(0,255,255,.12), rgba(255,0,255,.06) 60%, transparent 70%);
+  filter:blur(18px);opacity:.7;animation:floaty 12s linear infinite}
+.floating-shapes span:nth-child(1){left:5%;top:10%;--s:220px;animation-duration:18s}
+.floating-shapes span:nth-child(2){left:75%;top:5%;--s:160px;animation-duration:14s}
+.floating-shapes span:nth-child(3){left:30%;top:55%;--s:180px;animation-duration:20s}
+.floating-shapes span:nth-child(4){left:85%;top:70%;--s:120px;animation-duration:16s}
+.floating-shapes span:nth-child(5){left:45%;top:30%;--s:140px;animation-duration:22s}
+@keyframes floaty{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-40px) rotate(45deg)}100%{transform:translateY(0) rotate(0)}}
+
+/* Marquee */
+.marquee{width:100%;overflow:hidden;border-top:1px solid rgba(0,255,255,.04);border-bottom:1px solid rgba(0,255,255,.04);background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(255,255,255,0.02));}
+.marquee-inner{display:flex;gap:40px;padding:8px 16px;animation:marqueeAnim 18s linear infinite}
+.marquee-inner span{white-space:nowrap;color:var(--cyan);font-weight:600}
+@keyframes marqueeAnim{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* =====================
+   Hero / Glitch / Typewriter
+   ===================== */
+.hero{min-height:60vh;padding:64px 16px 36px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.hero-wave{position:absolute;left:0;right:0;bottom:0;pointer-events:none;opacity:.15}
+.hero-title{font-size:clamp(28px,4vw,52px);letter-spacing:1px;text-transform:uppercase;position:relative;z-index:2}
+.glow-text{color:transparent;background:var(--accent);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 12px rgba(0,255,255,.18));font-weight:800}
+.hero-subtitle{margin-top:10px;color:var(--white);opacity:.9;font-weight:600}
+
+/* Glitch (two colored offsets) */
+.glitch{position:relative}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
+.glitch::before{color:var(--magenta);opacity:.7;transform:translate(-2px,-1px);clip-path:inset(0 0 60% 0);animation:glitchTop 2.2s infinite linear}
+.glitch::after{color:var(--cyan);opacity:.6;transform:translate(2px,1px);clip-path:inset(30% 0 0 0);animation:glitchBot 2.2s infinite linear}
+@keyframes glitchTop{0%{clip-path:inset(0 0 0 0)}10%{clip-path:inset(0 0 60% 0)}20%{clip-path:inset(0 0 10% 0)}30%{clip-path:inset(30% 0 0 0)}100%{clip-path:inset(0 0 0 0)}}
+@keyframes glitchBot{0%{clip-path:inset(0 0 0 0)}10%{clip-path:inset(60% 0 0 0)}20%{clip-path:inset(10% 0 0 0)}30%{clip-path:inset(0 0 30% 0)}100%{clip-path:inset(0 0 0 0)}}
+
+/* Hero CTA buttons */
+.hero-cta{display:flex;gap:12px;align-items:center;z-index:2}
+.futuristic-btn{background:var(--cyan);color:#001;padding:10px 20px;border-radius:12px;font-weight:800;box-shadow:0 6px 24px rgba(0,255,255,.12);border:none;cursor:pointer;position:relative;overflow:hidden}
+.futuristic-outline{background:transparent;border:1px solid var(--cyan);color:var(--cyan);padding:10px 14px;border-radius:10px;cursor:pointer}
+.futuristic-btn:hover,.futuristic-outline:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,255,255,.18)}
+/* ripple placeholder, actual ripple created in JS */
+.ripple{--ripple-x:50%;--ripple-y:50%}
+
+/* =====================
+   Navbar / Glass
+   ===================== */
+.glass-nav{backdrop-filter:blur(8px);background:rgba(0,0,0,0.45);border-bottom:1px solid rgba(0,255,255,0.06)}
+.navbar-brand{font-weight:800}
+.navbar .nav-link{color:rgba(255,255,255,0.85);transition:color .2s}
+.navbar .nav-link.active,.navbar .nav-link:hover{color:var(--cyan)}
+.navbar .nav-link::after{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--cyan),var(--magenta));width:0;transition:width .25s}
+.navbar .nav-link.active::after,.navbar .nav-link:hover::after{width:100%}
+
+/* =====================
+   Carousel images
+   ===================== */
+.slider-img{height:420px;object-fit:cover;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.carousel-caption{bottom:18px;text-shadow:0 6px 20px rgba(0,0,0,.6)}
+
+/* =====================
+   Glass panel / sections
+   ===================== */
+.glass-panel{background:var(--panel);border-radius:14px;padding:22px;border:1px solid var(--glass-border);box-shadow:0 6px 40px rgba(0,0,0,.6)}
+
+/* Services / Cards */
+.service-card{padding:18px;border-radius:12px;transition:transform .28s,box-shadow .28s;cursor:default}
+.service-card img.service-img{width:140px;height:90px;object-fit:cover;border-radius:10px;display:block;margin:0 auto;filter:drop-shadow(0 8px 20px rgba(0,255,255,.06))}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 18px 60px rgba(0,255,255,.06)}
+
+/* Gallery small images + captions (you wanted smaller) */
+.gallery-img.small-img{width:150px;height:100px;object-fit:cover;border-radius:10px;box-shadow:0 8px 26px rgba(0,255,255,.06);transition:transform .25s,box-shadow .25s}
+.gallery-card:hover .gallery-img.small-img{transform:scale(1.08);box-shadow:0 20px 60px rgba(0,255,255,.12)}
+.gallery-card p{color:var(--cyan);margin-top:8px;font-weight:600}
+
+/* =====================
+   Counters & Skills
+   ===================== */
+.counter-card{padding:18px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:inset 0 0 12px rgba(0,255,255,.02);text-align:center}
+.counter{display:block;font-size:22px;font-weight:900;color:var(--cyan)}
+.skill{margin:12px 0}
+.skill span{display:block;margin-bottom:8px;font-weight:700;color:var(--white)}
+.bar{background:rgba(255,255,255,0.04);height:12px;border-radius:8px;overflow:hidden}
+.bar .fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),#5fb0ff);transition:width 1200ms cubic-bezier(.19,1,.22,1)}
+
+/* =====================
+   Tilt 3D support
+   ===================== */
+.rotate-3d{transform-style:preserve-3d;will-change:transform;transition:transform .18s ease}
+
+/* =====================
+   Ripple effect CSS (overlay used by JS)
+   ===================== */
+.ripple-effect{
+  position:absolute;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) 30%, transparent 60%);
+  transform:scale(0);opacity:1;animation:rippleAnim .6s linear forwards;
+}
+@keyframes rippleAnim{to{transform:scale(8);opacity:0}}
+
+/* =====================
+   Scroll reveal (reveal class toggles)
+   ===================== */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+
+/* =====================
+   Cursor trail (glowing dot)
+   ===================== */
+.cursor-dot{position:fixed;z-index:99999;pointer-events:none;width:14px;height:14px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 18px var(--cyan),0 0 40px rgba(95,176,255,.25);transform:translate(-50%,-50%);mix-blend-mode:screen;transition:transform .06s linear}
+
+/* =====================
+   Footer
+   ===================== */
+footer{padding:22px 10px;background:transparent;border-top:1px solid rgba(0,255,255,.04);color:rgba(255,255,255,.8)}
+
+/* =====================
+   Misc small helpers
+   ===================== */
+.small{font-size:0.86rem}
+.btn{font-weight:700}
+@media (max-width:768px){
+  .slider-img{height:260px}
+  .hero{padding:36px 10px}
+  .hero-title{font-size:26px}
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-100px); }
-  to   { transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* More futuristic effects placeholders */
-.effect-glow:hover { box-shadow: 0px 0px 20px cyan; }
-.effect-rotate:hover { transform: rotate(5deg) scale(1.05); }
-.effect-zoom:hover { transform: scale(1.2); }
-.effect-tilt { transform: perspective(600px) rotateY(5deg); }
-.effect-blur:hover { filter: blur(1px); }
-.effect-border { border: 2px solid transparent; transition: 0.3s; }
-.effect-border:hover { border-color: cyan; }
+/* ===== optional matrix overlay toggled by JS (low opacity by default) ===== */
+#matrixOverlay{position:fixed;inset:0;z-index:-4;pointer-events:none;opacity:0.03}
