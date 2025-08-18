@@ -1,1 +1,14 @@
-// Slider carousel const carousel = document.querySelector('#shopCarousel'); if (carousel) { const bsCarousel = new bootstrap.Carousel(carousel, { interval: 3000, ride: 'carousel' }); } // Tab navigation const tabLinks = document.querySelectorAll('.tab-link'); const tabSections = document.querySelectorAll('.tab-section'); tabLinks.forEach(link => { link.addEventListener('click', function(e){ e.preventDefault(); // Remove active class from all links tabLinks.forEach(l => l.classList.remove('active')); this.classList.add('active'); // Hide all sections tabSections.forEach(sec => sec.style.display = 'none'); // Show the selected tab section const tabId = this.getAttribute('data-tab'); document.getElementById(tabId).style.display = 'block'; }); }); // Show Home section by default document.getElementById('home').style.display = 'block';
+// Auto-sliding home images
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); // Change image every 3s
+}
