@@ -128,6 +128,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if(!carousel) return;
     if(e.key === 'ArrowLeft') carousel.prev();
     if(e.key === 'ArrowRight') carousel.next();
+
+    /*** CONTACT FORM HANDLING ***/
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = "Sending...";
+    try {
+      let data = new FormData(form);
+      let res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        status.textContent = "✅ Message sent successfully!";
+        form.reset();
+      } else {
+        status.textContent = "❌ Oops! Something went wrong.";
+      }
+    } catch (err) {
+      status.textContent = "⚠️ Network error. Try again.";
+    }
+  });
+}
+
   });
 
 });
+
