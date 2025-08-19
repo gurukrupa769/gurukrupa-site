@@ -185,6 +185,29 @@ body{
    ---------------------------- */
 .map-container iframe{ border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
 
+/* Futuristic Form */
+.futuristic-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.futuristic-form input,
+.futuristic-form textarea {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid cyan;
+  color: #fff;
+}
+
+.futuristic-form input:focus,
+.futuristic-form textarea:focus {
+  box-shadow: 0 0 10px cyan;
+  outline: none;
+}
+
+
 /* ----------------------------
    FOOTER
    ---------------------------- */
@@ -207,3 +230,4 @@ footer .glass-panel{ display:inline-block; }
   .gallery-card, .hero-bg-name, .slides, .neon-accent, .hero-title{ animation:none !important }
   .carousel .carousel-item{ transition:none !important }
 }
+
