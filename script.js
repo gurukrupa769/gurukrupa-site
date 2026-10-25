@@ -1,162 +1,255 @@
-// -----------------------------
-// script.js - futuristic site
-// -----------------------------
 
-// Wait for DOM & bootstrap to be ready
-document.addEventListener('DOMContentLoaded', () => {
+/* =========================================================
+   GURUKRUPA XEROX & SOHAM MULTISERVICES
+   Main JavaScript: script.js
+   ========================================================= */
 
-  /*** PRELOADER ***/
-  const preloader = document.getElementById('preloader');
-  if(preloader){
-    window.setTimeout(()=> preloader.classList.add('hidden'), 700);
-    // hide fully after animation
-    window.setTimeout(()=> { if(preloader) preloader.style.display='none' }, 1200);
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+  /* -------------------------------------------------------
+     1. AUTOMATIC COPYRIGHT YEAR
+  ------------------------------------------------------- */
+
+  const yearElement = document.getElementById("currentYear");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
   }
 
-  /*** SLIDER PAUSE/PLAY BUTTON (uses Bootstrap carousel) ***/
-  const carouselEl = document.querySelector('#shopCarousel');
-  const carousel = carouselEl ? bootstrap.Carousel.getOrCreateInstance(carouselEl) : null;
-  const pauseBtn = document.getElementById('sliderPause');
+  /* -------------------------------------------------------
+     2. HEADER SCROLL EFFECT
+  ------------------------------------------------------- */
 
-  let isPaused = false;
-  if(pauseBtn){
-    pauseBtn.addEventListener('click', () => {
-      if(!carousel) return;
-      if(isPaused){
-        carousel.cycle();
-        pauseBtn.textContent = '⏸︎'; // show pause icon
-        isPaused = false;
-      } else {
-        carousel.pause();
-        pauseBtn.textContent = '▶'; // play icon
-        isPaused = true;
-      }
-    });
-  }
+  const siteHeader = document.querySelector(".site-header");
 
-  /*** BACK TO TOP ***/
-  const backBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 400) backBtn.style.display = 'block';
-    else backBtn.style.display = 'none';
-  });
-  backBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  const updateHeader = () => {
+    if (!siteHeader) return;
 
-  /*** SMOOTH SCROLL FOR NAV LINKS (and tab behavior) ***/
-  const tabLinks = document.querySelectorAll('.tab-link');
-  const tabSections = document.querySelectorAll('.tab-section');
-
-  function showSectionById(id){
-    // hide all
-    tabSections.forEach(s => s.style.display = 'none');
-    const el = document.getElementById(id);
-    if(el) el.style.display = 'block';
-    // update active in navbar
-    tabLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('data-tab') === id);
-    });
-    // smooth scroll
-    const top = el ? el.getBoundingClientRect().top + window.scrollY - 72 : 0;
-    window.scrollTo({top, behavior:'smooth'});
-  }
-
-  tabLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const tabId = link.getAttribute('data-tab');
-      showSectionById(tabId);
-      // update url hash without jumping
-      history.replaceState(null, '', `#${tabId}`);
-    });
-  });
-
-  // Show home by default (if no hash)
-  const initialHash = location.hash ? location.hash.replace('#','') : 'home';
-  showSectionById(initialHash);
-
-  /*** GALLERY LIGHTBOX SUPPORT ***/
-  const lightboxModal = document.getElementById('lightboxModal');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxCaption = document.getElementById('lightboxCaption');
-
-  document.querySelectorAll('.gallery-card img').forEach(img => {
-    // allow keyboard opening by focusing parent
-    img.addEventListener('click', (e) => {
-      const full = img.getAttribute('data-full') || img.src;
-      lightboxImg.src = full;
-      lightboxCaption.textContent = img.alt || '';
-    });
-    img.parentElement.addEventListener('keydown', (ev) => {
-      if(ev.key === 'Enter' || ev.key === ' ') {
-        ev.preventDefault();
-        img.click();
-      }
-    });
-  });
-
-  // Close lightbox on ESC
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape'){
-      const mod = bootstrap.Modal.getInstance(lightboxModal);
-      if(mod) mod.hide();
+    if (window.scrollY > 15) {
+      siteHeader.classList.add("header-scrolled");
+    } else {
+      siteHeader.classList.remove("header-scrolled");
     }
+  };
+
+  updateHeader();
+
+  window.addEventListener("scroll", updateHeader, {
+    passive: true
   });
 
-  /*** ACCESSIBILITY: focus outlines for keyboard users ***/
-  function handleFirstTab(e){
-    if(e.key === 'Tab') {
-      document.body.classList.add('show-focus');
-      window.removeEventListener('keydown', handleFirstTab);
-    }
-  }
-  window.addEventListener('keydown', handleFirstTab);
+  /* -------------------------------------------------------
+     3. CLOSE MOBILE NAVIGATION AFTER CLICKING A LINK
+  ------------------------------------------------------- */
 
-  /*** OPTIONAL: small floating delays for gallery */
-  document.querySelectorAll('.gallery-card').forEach((el, i) => {
-    el.style.setProperty('--i', String(i));
-  });
+  const navigationElement = document.getElementById("mainNavigation");
 
-  /*** REDUCED MOTION: stop animations if user prefers reduced motion ***/
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    // pause bootstrap carousel
-    if(carousel) carousel.pause();
-    document.querySelectorAll('*').forEach(n => n.style.animationPlayState = 'paused');
-  }
+  if (navigationElement && window.bootstrap) {
+    const mobileCollapse = bootstrap.Collapse.getOrCreateInstance(
+      navigationElement,
+      { toggle: false }
+    );
 
-  /*** OPTIONAL: keyboard navigation on carousel (left/right) ***/
-  document.addEventListener('keydown', (e) => {
-    if(!carousel) return;
-    if(e.key === 'ArrowLeft') carousel.prev();
-    if(e.key === 'ArrowRight') carousel.next();
-
-    /*** CONTACT FORM HANDLING ***/
-const form = document.getElementById('contact-form');
-const status = document.getElementById('form-status');
-
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.textContent = "Sending...";
-    try {
-      let data = new FormData(form);
-      let res = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
+    navigationElement.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (
+          window.innerWidth < 992 &&
+          navigationElement.classList.contains("show")
+        ) {
+          mobileCollapse.hide();
+        }
       });
-      if (res.ok) {
-        status.textContent = "✅ Message sent successfully!";
-        form.reset();
-      } else {
-        status.textContent = "❌ Oops! Something went wrong.";
+    });
+  }
+
+  /* -------------------------------------------------------
+     4. ACTIVE NAVIGATION LINK
+     Highlights the current page in the navigation.
+  ------------------------------------------------------- */
+
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".site-header .navbar-nav .nav-link").forEach(
+    (link) => {
+      const href = link.getAttribute("href");
+
+      if (!href || href.startsWith("#")) return;
+
+      const linkPage = href.split("#")[0].split("/").pop();
+
+      if (linkPage && linkPage === currentPage) {
+        link.classList.add("active");
+
+        if (link.classList.contains("dropdown-toggle")) {
+          link.setAttribute("aria-current", "page");
+        }
+      } else if (link.classList.contains("active")) {
+        link.classList.remove("active");
       }
-    } catch (err) {
-      status.textContent = "⚠️ Network error. Try again.";
+    }
+  );
+
+  /* -------------------------------------------------------
+     5. SMOOTH SCROLL FOR SAME-PAGE ANCHORS
+  ------------------------------------------------------- */
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (!href || href === "#") return;
+
+      const target = document.querySelector(href);
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      target.scrollIntoView({
+        behavior: window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+          ? "auto"
+          : "smooth",
+        block: "start"
+      });
+
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", href);
+      }
+    });
+  });
+
+  /* -------------------------------------------------------
+     6. BACK-TO-TOP LINK
+  ------------------------------------------------------- */
+
+  document.querySelectorAll(".back-to-top").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+          ? "auto"
+          : "smooth"
+      });
+    });
+  });
+
+  /* -------------------------------------------------------
+     7. IMAGE FALLBACK
+     If a gallery image is missing, display a clean placeholder.
+  ------------------------------------------------------- */
+
+  document.querySelectorAll(".gallery-image-wrap img").forEach((image) => {
+    image.addEventListener("error", () => {
+      const wrapper = image.closest(".gallery-image-wrap");
+
+      if (!wrapper || wrapper.dataset.fallbackShown === "true") {
+        return;
+      }
+
+      wrapper.dataset.fallbackShown = "true";
+
+      image.hidden = true;
+
+      const placeholder = document.createElement("div");
+      placeholder.className = "image-placeholder";
+      placeholder.setAttribute("role", "img");
+      placeholder.setAttribute(
+        "aria-label",
+        image.alt || "Image currently unavailable"
+      );
+
+      const icon = document.createElement("i");
+      icon.className = "bi bi-image";
+      icon.setAttribute("aria-hidden", "true");
+
+      const message = document.createElement("span");
+      message.textContent = "Image coming soon";
+
+      placeholder.append(icon, message);
+      wrapper.appendChild(placeholder);
+    });
+  });
+
+  /* -------------------------------------------------------
+     8. PREVENT ACCIDENTAL EMPTY FORM SUBMISSIONS
+     Adds basic browser-side feedback to forms that opt in
+     with the data-validate attribute.
+  ------------------------------------------------------- */
+
+  document.querySelectorAll("form[data-validate]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add("was-validated");
+    });
+  });
+
+  /* -------------------------------------------------------
+     9. PRINT FILE INPUT DISPLAY
+     Optional enhancement for future online-printing forms.
+
+     Add data-file-name to an element beside a file input
+     if you want the selected filename displayed there.
+  ------------------------------------------------------- */
+
+  document.querySelectorAll('input[type="file"]').forEach((input) => {
+    input.addEventListener("change", () => {
+      const selector = input.dataset.fileName;
+
+      if (!selector) return;
+
+      const output = document.querySelector(selector);
+
+      if (!output) return;
+
+      if (input.files && input.files.length > 0) {
+        output.textContent = Array.from(input.files)
+          .map((file) => file.name)
+          .join(", ");
+      } else {
+        output.textContent = "";
+      }
+    });
+  });
+
+  /* -------------------------------------------------------
+     10. LOGO / BRAND HOME NAVIGATION
+     Standard anchor navigation is intentionally preserved.
+  ------------------------------------------------------- */
+
+  /* -------------------------------------------------------
+     11. ACCESSIBILITY: ESCAPE KEY FOR OPEN MOBILE MENU
+  ------------------------------------------------------- */
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (!navigationElement || !window.bootstrap) return;
+
+    if (
+      window.innerWidth < 992 &&
+      navigationElement.classList.contains("show")
+    ) {
+      bootstrap.Collapse.getOrCreateInstance(
+        navigationElement,
+        { toggle: false }
+      ).hide();
     }
   });
-}
 
-  });
+  /* -------------------------------------------------------
+     12. READY
+  ------------------------------------------------------- */
 
+  document.documentElement.classList.add("js-ready");
 });
-
