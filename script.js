@@ -1,113 +1,147 @@
 
-/* =========================================================
-   GURUKRUPA XEROX & SOHAM MULTISERVICES
-   Main JavaScript: script.js
-   ========================================================= */
-
-"use strict";
+// =========================================================
+// GURUKRUPA XEROX AND SOHAM MULTISERVICES
+// Main JavaScript
+// =========================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* -------------------------------------------------------
-     1. AUTOMATIC COPYRIGHT YEAR
-  ------------------------------------------------------- */
+  "use strict";
 
-  const yearElement = document.getElementById("currentYear");
+  // -------------------------------------------------------
+  // 1. MOBILE NAVIGATION
+  // -------------------------------------------------------
 
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNavigation = document.getElementById("mainNavigation");
 
-  /* -------------------------------------------------------
-     2. HEADER SCROLL EFFECT
-  ------------------------------------------------------- */
+  if (menuToggle && mainNavigation) {
+    const closeMenu = () => {
+      mainNavigation.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
 
-  const siteHeader = document.querySelector(".site-header");
+      const menuIcon = menuToggle.querySelector("i");
 
-  const updateHeader = () => {
-    if (!siteHeader) return;
+      if (menuIcon) {
+        menuIcon.classList.remove("bi-x-lg");
+        menuIcon.classList.add("bi-list");
+      }
+    };
 
-    if (window.scrollY > 15) {
-      siteHeader.classList.add("header-scrolled");
-    } else {
-      siteHeader.classList.remove("header-scrolled");
-    }
-  };
+    const openMenu = () => {
+      mainNavigation.classList.add("is-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "Close navigation menu");
 
-  updateHeader();
+      const menuIcon = menuToggle.querySelector("i");
 
-  window.addEventListener("scroll", updateHeader, {
-    passive: true
-  });
+      if (menuIcon) {
+        menuIcon.classList.remove("bi-list");
+        menuIcon.classList.add("bi-x-lg");
+      }
+    };
 
-  /* -------------------------------------------------------
-     3. CLOSE MOBILE NAVIGATION AFTER CLICKING A LINK
-  ------------------------------------------------------- */
+    menuToggle.addEventListener("click", () => {
+      const isExpanded =
+        menuToggle.getAttribute("aria-expanded") === "true";
 
-  const navigationElement = document.getElementById("mainNavigation");
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
 
-  if (navigationElement && window.bootstrap) {
-    const mobileCollapse = bootstrap.Collapse.getOrCreateInstance(
-      navigationElement,
-      { toggle: false }
-    );
-
-    navigationElement.querySelectorAll("a").forEach((link) => {
+    // Close the menu after selecting a navigation link.
+    mainNavigation.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        if (
-          window.innerWidth < 992 &&
-          navigationElement.classList.contains("show")
-        ) {
-          mobileCollapse.hide();
-        }
+        closeMenu();
       });
+    });
+
+    // Close the menu when clicking outside the navigation.
+    document.addEventListener("click", (event) => {
+      const clickedInsideNavigation =
+        mainNavigation.contains(event.target);
+
+      const clickedMenuButton =
+        menuToggle.contains(event.target);
+
+      if (!clickedInsideNavigation && !clickedMenuButton) {
+        closeMenu();
+      }
+    });
+
+    // Close the menu using the Escape key.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    // Close the mobile menu when returning to desktop width.
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) {
+        closeMenu();
+      }
     });
   }
 
-  /* -------------------------------------------------------
-     4. ACTIVE NAVIGATION LINK
-     Highlights the current page in the navigation.
-  ------------------------------------------------------- */
 
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.split("/").pop() || "index.html";
+  // -------------------------------------------------------
+  // 2. AUTOMATIC COPYRIGHT YEAR
+  // -------------------------------------------------------
 
-  document.querySelectorAll(".site-header .navbar-nav .nav-link").forEach(
-    (link) => {
-      const href = link.getAttribute("href");
+  const currentYear = document.getElementById("currentYear");
 
-      if (!href || href.startsWith("#")) return;
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 
-      const linkPage = href.split("#")[0].split("/").pop();
 
-      if (linkPage && linkPage === currentPage) {
-        link.classList.add("active");
+  // -------------------------------------------------------
+  // 3. FAQ: KEEP ONLY ONE ANSWER OPEN AT A TIME
+  // -------------------------------------------------------
 
-        if (link.classList.contains("dropdown-toggle")) {
-          link.setAttribute("aria-current", "page");
-        }
-      } else if (link.classList.contains("active")) {
-        link.classList.remove("active");
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) {
+        return;
       }
-    }
-  );
 
-  /* -------------------------------------------------------
-     5. SMOOTH SCROLL FOR SAME-PAGE ANCHORS
-  ------------------------------------------------------- */
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.open = false;
+        }
+      });
+    });
+  });
+
+
+  // -------------------------------------------------------
+  // 4. SMOOTH SCROLL FOR SAME-PAGE LINKS
+  // -------------------------------------------------------
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
-      const href = link.getAttribute("href");
+      const targetId = link.getAttribute("href");
 
-      if (!href || href === "#") return;
+      if (!targetId || targetId === "#") {
+        return;
+      }
 
-      const target = document.querySelector(href);
+      const targetElement = document.querySelector(targetId);
 
-      if (!target) return;
+      if (!targetElement) {
+        return;
+      }
 
       event.preventDefault();
 
-      target.scrollIntoView({
+      targetElement.scrollIntoView({
         behavior: window.matchMedia(
           "(prefers-reduced-motion: reduce)"
         ).matches
@@ -116,140 +150,22 @@ document.addEventListener("DOMContentLoaded", () => {
         block: "start"
       });
 
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState(null, "", href);
+      // Update the URL hash without causing a second jump.
+      if (window.location.hash !== targetId) {
+        history.replaceState(null, "", targetId);
       }
     });
   });
 
-  /* -------------------------------------------------------
-     6. BACK-TO-TOP LINK
-  ------------------------------------------------------- */
 
-  document.querySelectorAll(".back-to-top").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
+  // -------------------------------------------------------
+  // 5. BASIC EXTERNAL LINK SAFETY
+  // -------------------------------------------------------
 
-      window.scrollTo({
-        top: 0,
-        behavior: window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches
-          ? "auto"
-          : "smooth"
-      });
+  document
+    .querySelectorAll('a[target="_blank"]')
+    .forEach((link) => {
+      link.setAttribute("rel", "noopener noreferrer");
     });
-  });
 
-  /* -------------------------------------------------------
-     7. IMAGE FALLBACK
-     If a gallery image is missing, display a clean placeholder.
-  ------------------------------------------------------- */
-
-  document.querySelectorAll(".gallery-image-wrap img").forEach((image) => {
-    image.addEventListener("error", () => {
-      const wrapper = image.closest(".gallery-image-wrap");
-
-      if (!wrapper || wrapper.dataset.fallbackShown === "true") {
-        return;
-      }
-
-      wrapper.dataset.fallbackShown = "true";
-
-      image.hidden = true;
-
-      const placeholder = document.createElement("div");
-      placeholder.className = "image-placeholder";
-      placeholder.setAttribute("role", "img");
-      placeholder.setAttribute(
-        "aria-label",
-        image.alt || "Image currently unavailable"
-      );
-
-      const icon = document.createElement("i");
-      icon.className = "bi bi-image";
-      icon.setAttribute("aria-hidden", "true");
-
-      const message = document.createElement("span");
-      message.textContent = "Image coming soon";
-
-      placeholder.append(icon, message);
-      wrapper.appendChild(placeholder);
-    });
-  });
-
-  /* -------------------------------------------------------
-     8. PREVENT ACCIDENTAL EMPTY FORM SUBMISSIONS
-     Adds basic browser-side feedback to forms that opt in
-     with the data-validate attribute.
-  ------------------------------------------------------- */
-
-  document.querySelectorAll("form[data-validate]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-
-      form.classList.add("was-validated");
-    });
-  });
-
-  /* -------------------------------------------------------
-     9. PRINT FILE INPUT DISPLAY
-     Optional enhancement for future online-printing forms.
-
-     Add data-file-name to an element beside a file input
-     if you want the selected filename displayed there.
-  ------------------------------------------------------- */
-
-  document.querySelectorAll('input[type="file"]').forEach((input) => {
-    input.addEventListener("change", () => {
-      const selector = input.dataset.fileName;
-
-      if (!selector) return;
-
-      const output = document.querySelector(selector);
-
-      if (!output) return;
-
-      if (input.files && input.files.length > 0) {
-        output.textContent = Array.from(input.files)
-          .map((file) => file.name)
-          .join(", ");
-      } else {
-        output.textContent = "";
-      }
-    });
-  });
-
-  /* -------------------------------------------------------
-     10. LOGO / BRAND HOME NAVIGATION
-     Standard anchor navigation is intentionally preserved.
-  ------------------------------------------------------- */
-
-  /* -------------------------------------------------------
-     11. ACCESSIBILITY: ESCAPE KEY FOR OPEN MOBILE MENU
-  ------------------------------------------------------- */
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    if (!navigationElement || !window.bootstrap) return;
-
-    if (
-      window.innerWidth < 992 &&
-      navigationElement.classList.contains("show")
-    ) {
-      bootstrap.Collapse.getOrCreateInstance(
-        navigationElement,
-        { toggle: false }
-      ).hide();
-    }
-  });
-
-  /* -------------------------------------------------------
-     12. READY
-  ------------------------------------------------------- */
-
-  document.documentElement.classList.add("js-ready");
 });
