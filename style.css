@@ -2129,3 +2129,30 @@ select:focus-visible {
     font-size: 33px;
   }
 }
+
+
+/* JavaScript enhancements */
+
+.site-header.header-scrolled {
+  box-shadow: 0 8px 28px rgba(13, 32, 57, 0.08);
+}
+
+.image-placeholder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: #EAF0F7;
+  color: #6C7685;
+  font-size: 12px;
+}
+
+.image-placeholder i {
+  color: #142D4E;
+  font-size: 35px;
+}
+
