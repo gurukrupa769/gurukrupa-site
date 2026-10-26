@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gallery | Gurukrupa Xerox And Soham Multiservices</title>
+  <meta
+    name="description"
+    content="Explore the gallery of Gurukrupa Xerox And Soham Multiservices, New Bhokardan, Maharashtra. View business photos, service facilities and work samples."
+  >
+  <meta name="theme-color" content="#142d4e">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .gallery-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 20px 68px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(199,164,93,.2), transparent 28%),
+        linear-gradient(135deg, #0c2039, #142d4e 65%, #24466d);
+      color: #fff;
+      text-align: center;
+    }
+
+    .gallery-hero .eyebrow {
+      color: #e7d5a8;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .gallery-hero h1 {
+      max-width: 820px;
+      margin: 16px auto;
+      font-size: clamp(2.1rem, 5vw, 3.7rem);
+      line-height: 1.12;
+    }
+
+    .gallery-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.82);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .gallery-section {
+      padding: 65px 20px;
+    }
+
+    .gallery-container {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .gallery-heading {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .gallery-heading .eyebrow {
+      color: #a17d38;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .gallery-heading h2 {
+      margin: 10px 0;
+      color: #142d4e;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .gallery-heading p {
+      color: #647084;
+      line-height: 1.8;
+    }
+
+    .gallery-notice {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: 0 auto 35px;
+      padding: 18px 20px;
+      border: 1px solid #eadfca;
+      border-radius: 14px;
+      background: #fcfaf5;
+      color: #5f5a4f;
+      line-height: 1.7;
+    }
+
+    .gallery-notice span {
+      flex-shrink: 0;
+      font-size: 1.25rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      border: 1px solid #e4e8ef;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 12px 35px rgba(20,45,78,.055);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(20,45,78,.1);
+    }
+
+    .gallery-placeholder {
+      display: grid;
+      min-height: 215px;
+      padding: 25px;
+      place-items: center;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(199,164,93,.16), transparent 32%),
+        linear-gradient(145deg, #eef1f6, #f8f9fb);
+      text-align: center;
+    }
+
+    .gallery-placeholder-icon {
+      display: grid;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 13px;
+      place-items: center;
+      border: 1px solid #dce2eb;
+      border-radius: 20px;
+      background: #fff;
+      color: #142d4e;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 18px rgba(20,45,78,.06);
+    }
+
+    .gallery-placeholder p {
+      max-width: 230px;
+      margin: 0 auto;
+      color: #647084;
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    .gallery-card-content {
+      padding: 22px;
+    }
+
+    .gallery-card-content h3 {
+      margin: 0 0 8px;
+      color: #142d4e;
+      font-size: 1.12rem;
+    }
+
+    .gallery-card-content p {
+      margin: 0;
+      color: #647084;
+      font-size: .94rem;
+      line-height: 1.75;
+    }
+
+    .gallery-photo-guide {
+      margin-top: 48px;
+      padding: 30px;
+      border: 1px solid #e4e8ef;
+      border-radius: 18px;
+      background: #f3f5f8;
+    }
+
+    .gallery-photo-guide h2 {
+      margin: 0 0 12px;
+      color: #142d4e;
+      font-size: 1.5rem;
+    }
+
+    .gallery-photo-guide p {
+      color: #647084;
+      line-height: 1.8;
+    }
+
+    .gallery-photo-guide ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 28px;
+      padding-left: 20px;
+      color: #42516a;
+      line-height: 1.8;
+    }
+
+    .gallery-cta {
+      padding: 0 20px 70px;
+    }
+
+    .gallery-cta-panel {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      padding: 40px 28px;
+      border-radius: 20px;
+      background: #142d4e;
+      color: #fff;
+      text-align: center;
+    }
+
+    .gallery-cta-panel h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+    }
+
+    .gallery-cta-panel p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+      color: rgba(255,255,255,.8);
+      line-height: 1.8;
+    }
+
+    .gallery-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .gallery-cta-actions a {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid #c7a45d;
+      border-radius: 999px;
+      background: #c7a45d;
+      color: #142d4e;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .gallery-cta-actions a.secondary {
+      border-color: rgba(255,255,255,.35);
+      background: transparent;
+      color: #fff;
+    }
+
+    .gallery-cta-actions a:hover {
+      filter: brightness(1.08);
+    }
+
+    @media (max-width: 850px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 580px) {
+      .gallery-hero {
+        padding: 58px 20px 48px;
+      }
+
+      .gallery-section {
+        padding: 48px 18px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .gallery-placeholder {
+        min-height: 190px;
+      }
+
+      .gallery-photo-guide {
+        padding: 23px;
+      }
+
+      .gallery-photo-guide ul {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-cta {
+        padding: 0 18px 48px;
+      }
+
+      .gallery-cta-panel {
+        padding: 30px 20px;
+      }
+
+      .gallery-cta-actions {
+        flex-direction: column;
+      }
+
+      .gallery-cta-actions a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-card {
+        transition: none;
+      }
+
+      .gallery-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- Announcement bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>Welcome to Gurukrupa Xerox And Soham Multiservices</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Gurukrupa Xerox And Soham Multiservices home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-copy">
+          <span class="brand-name">Gurukrupa Xerox</span>
+          <span class="brand-subtitle">And Soham Multiservices</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="mainNavigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="gallery.html" aria-current="page">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-primary nav-cta" href="service-request.html">Request a Service</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Gallery hero -->
+    <section class="gallery-hero">
+      <span class="eyebrow">A Closer Look</span>
+      <h1>Our Business Gallery</h1>
+      <p>
+        A dedicated space for our business location, service facilities,
+        work samples and updates. We’ll add genuine photographs as they
+        become available.
+      </p>
+    </section>
+
+    <!-- Gallery items -->
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-container">
+
+        <div class="gallery-heading">
+          <span class="eyebrow">Inside Our Work</span>
+          <h2>Explore Our Gallery</h2>
+          <p>
+            These categories are ready for your actual photographs.
+            The panels below are placeholders, not photographs of the
+            business or completed customer work.
+          </p>
+        </div>
+
+        <div class="gallery-notice">
+          <span aria-hidden="true">📸</span>
+          <div>
+            <strong>Real photos coming soon.</strong>
+            Add your own business images to make this page a genuine
+            reflection of Gurukrupa Xerox And Soham Multiservices.
+            Always obtain permission before publishing customer documents,
+            faces or personal information.
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+
+          <article class="gallery-card">
+            <div class="gallery-placeholder">
+              <div>
+                <div class="gallery-placeholder-icon" aria-hidden="true">⌂</div>
+                <p>Replace this panel with an actual exterior photo.</p>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Our Business Location</h3>
+              <p>
+                A genuine photograph of the entrance, signboard or
+                exterior of the business.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-placeholder">
+              <div>
+                <div class="gallery-placeholder-icon" aria-hidden="true">▤</div>
+                <p>Replace this panel with a real service-area photo.</p>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Service Facilities</h3>
+              <p>
+                A view of the actual workspace and facilities available
+                to customers.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-placeholder">
+              <div>
+                <div class="gallery-placeholder-icon" aria-hidden="true">▧</div>
+                <p>Replace this panel with a genuine printing photo.</p>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Xerox & Printing</h3>
+              <p>
+                Actual equipment and examples of printing or copying
+                services, where available.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-placeholder">
+              <div>
+                <div class="gallery-placeholder-icon" aria-hidden="true">✓</div>
+                <p>Use a non-sensitive, approved example.</p>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Documentation Support</h3>
+              <p>
+                Suitable examples of document preparation or
+                administrative assistance, with private details removed.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-placeholder">
+              <div>
+                <div class="gallery-placeholder-icon" aria-hidden="true">⌨</div>
+                <p>Replace this panel with a real workspace photo.</p>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Digital & Data Services</h3>
+              <p>
+                Genuine photographs illustrating the digital work
+                and data services actually offered.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-placeholder">
+              <div>
+                <div class="gallery-placeholder-icon" aria-hidden="true">✦</div>
+                <p>Use real business updates or event photographs.</p>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Business Updates</h3>
+              <p>
+                Approved photographs of real milestones, events or
+                updates—when you have them to share.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Photo guidance -->
+        <div class="gallery-photo-guide">
+          <h2>Make This Gallery Truly Yours</h2>
+          <p>
+            For the best result, use clear, well-lit photographs taken
+            at your actual business. Landscape photos work especially
+            well for this layout.
+          </p>
+          <ul>
+            <li>Business exterior and signboard</li>
+            <li>Actual service counter or workspace</li>
+            <li>Equipment and facilities you use</li>
+            <li>Approved, non-sensitive work samples</li>
+            <li>Real business events and updates</li>
+            <li>Images with customer permission where required</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gallery call to action -->
+    <section class="gallery-cta">
+      <div class="gallery-cta-panel">
+        <h2>Have a Service Requirement?</h2>
+        <p>
+          You don’t need to wait for the gallery to be completed.
+          Contact us to discuss your requirements and confirm service
+          availability before proceeding.
+        </p>
+        <div class="gallery-cta-actions">
+          <a href="service-request.html">Request a Service</a>
+          <a class="secondary" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="index.html">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-copy">
+            <span class="brand-name">Gurukrupa Xerox</span>
+            <span class="brand-subtitle">And Soham Multiservices</span>
+          </span>
+        </a>
+        <p>
+          Practical service assistance, with clear communication and
+          customer approval before work proceeds.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Customer Help</h3>
+        <a href="service-request.html">Service Enquiry</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cancellation-refunds.html">Cancellations & Refunds</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <a href="tel:+917745062299">+91 77450 62299</a>
+        <a href="mailto:narayan.katore9@gmail.com">
+          narayan.katore9@gmail.com
+        </a>
+        <p>Balaji Nagar, New Bhokardan, Maharashtra 431114</p>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>
+        © <span id="currentYear"></span>
+        Gurukrupa Xerox And Soham Multiservices. All rights reserved.
+      </p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/917745062299?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+  >
+    <span aria-hidden="true">✆</span>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
