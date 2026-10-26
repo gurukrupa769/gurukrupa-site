@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | Gurukrupa Xerox And Soham Multiservices</title>
+
+  <meta
+    name="description"
+    content="Learn about Gurukrupa Xerox And Soham Multiservices in Balaji Nagar, New Bhokardan, Maharashtra, and our approach to customer service."
+  >
+
+  <meta name="theme-color" content="#142D4E">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <script src="script.js" defer></script>
+
+  <style>
+    .about-page-hero {
+      padding: 80px 0;
+      background:
+        radial-gradient(
+          ellipse at 85% 20%,
+          rgba(199, 164, 93, 0.14),
+          transparent 35%
+        ),
+        linear-gradient(180deg, #ffffff, #f3f5f8);
+      border-bottom: 1px solid #e4e9f0;
+    }
+
+    .about-page-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .about-breadcrumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      color: #718096;
+      font-size: 0.78rem;
+    }
+
+    .about-breadcrumb a {
+      color: #142d4e;
+      font-weight: 750;
+    }
+
+    .about-breadcrumb i {
+      color: #c7a45d;
+    }
+
+    .about-page-hero h1 {
+      margin-top: 24px;
+      color: #142d4e;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 850;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .about-page-hero h1 span {
+      color: #c7a45d;
+    }
+
+    .about-page-hero p {
+      max-width: 620px;
+      margin-top: 22px;
+      color: #536277;
+      font-size: 1rem;
+      line-height: 1.95;
+    }
+
+    .about-page-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .about-brand-visual {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      background: linear-gradient(145deg, #eaf0f7, #f7f2e8);
+      border: 1px solid #e4e9f0;
+      border-radius: 42px 100px 42px 100px;
+    }
+
+    .about-brand-visual::before {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(199, 164, 93, 0.5);
+      border-radius: 35px 80px 35px 80px;
+      content: "";
+    }
+
+    .about-brand-card {
+      position: relative;
+      z-index: 1;
+      width: min(350px, 100%);
+      padding: 34px 27px;
+      background: #ffffff;
+      border: 1px solid rgba(20, 45, 78, 0.07);
+      border-radius: 24px;
+      box-shadow: 0 24px 65px rgba(20, 45, 78, 0.12);
+      text-align: center;
+    }
+
+    .about-brand-symbol {
+      width: 75px;
+      height: 75px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      color: #142d4e;
+      background: linear-gradient(145deg, #e7d5a8, #c7a45d);
+      border-radius: 22px 22px 22px 7px;
+      font-size: 2rem;
+    }
+
+    .about-brand-card .brand-overline {
+      color: #718096;
+      font-size: 0.65rem;
+      font-weight: 850;
+      letter-spacing: 1.5px;
+    }
+
+    .about-brand-card h2 {
+      margin-top: 12px;
+      color: #142d4e;
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .about-brand-card h2 span {
+      display: block;
+      color: #c7a45d;
+    }
+
+    .about-brand-card p {
+      margin-top: 13px;
+      color: #536277;
+      font-size: 0.84rem;
+      line-height: 1.8;
+    }
+
+    .about-location-badge {
+      position: absolute;
+      right: 0;
+      bottom: 28px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      color: #142d4e;
+      background: #ffffff;
+      border: 1px solid #e4e9f0;
+      border-radius: 13px;
+      box-shadow: 0 8px 24px rgba(20, 45, 78, 0.1);
+      font-size: 0.77rem;
+      font-weight: 800;
+    }
+
+    .about-location-badge i {
+      color: #c7a45d;
+      font-size: 1.1rem;
+    }
+
+    .about-introduction {
+      padding: 85px 0;
+      background: #ffffff;
+    }
+
+    .about-introduction-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .about-section-title h2 {
+      margin-top: 13px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .about-section-title h2 span {
+      color: #c7a45d;
+    }
+
+    .about-section-copy p {
+      color: #536277;
+      font-size: 0.95rem;
+      line-height: 1.95;
+    }
+
+    .about-section-copy p + p {
+      margin-top: 17px;
+    }
+
+    .about-principles {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+
+    .about-centered-heading {
+      max-width: 740px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .about-centered-heading h2 {
+      margin-top: 13px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .about-centered-heading h2 span {
+      color: #c7a45d;
+    }
+
+    .about-centered-heading p {
+      margin-top: 15px;
+      color: #536277;
+      line-height: 1.9;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .principle-card {
+      padding: 27px;
+      background: #ffffff;
+      border: 1px solid #e4e9f0;
+      border-radius: 17px;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .principle-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(20, 45, 78, 0.09);
+    }
+
+    .principle-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      color: #142d4e;
+      background: #f8f0dc;
+      border-radius: 15px;
+      font-size: 1.35rem;
+    }
+
+    .principle-card h3 {
+      margin-top: 21px;
+      color: #142d4e;
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+
+    .principle-card p {
+      margin-top: 10px;
+      color: #536277;
+      font-size: 0.86rem;
+      line-height: 1.9;
+    }
+
+    .about-categories {
+      padding: 82px 0;
+      background: #ffffff;
+    }
+
+    .about-categories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-categories-copy h2 {
+      margin-top: 13px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .about-categories-copy h2 span {
+      color: #c7a45d;
+    }
+
+    .about-categories-copy p {
+      margin-top: 17px;
+      color: #536277;
+      font-size: 0.94rem;
+      line-height: 1.9;
+    }
+
+    .about-category-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .about-category-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-height: 72px;
+      padding: 15px;
+      background: #f8fafc;
+      border: 1px solid #e4e9f0;
+      border-radius: 12px;
+      color: #142d4e;
+      font-size: 0.82rem;
+      font-weight: 750;
+      line-height: 1.5;
+    }
+
+    .about-category-item i {
+      flex-shrink: 0;
+      color: #c7a45d;
+      font-size: 1.15rem;
+    }
+
+    .about-contact-section {
+      padding: 0 0 85px;
+      background: #ffffff;
+    }
+
+    .about-contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 42px;
+      color: #ffffff;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(199, 164, 93, 0.2),
+          transparent 33%
+        ),
+        #142d4e;
+      border-radius: 24px;
+    }
+
+    .about-contact-box h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .about-contact-box p {
+      max-width: 650px;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    .about-contact-actions {
+      display: flex;
+      flex-shrink: 0;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .about-page-hero-grid,
+      .about-introduction-grid,
+      .about-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-brand-visual {
+        width: min(550px, 100%);
+        margin-inline: auto;
+      }
+
+      .principles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-contact-box {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .about-contact-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-page-hero,
+      .about-introduction,
+      .about-principles,
+      .about-categories {
+        padding: 60px 0;
+      }
+
+      .about-page-hero h1 {
+        font-size: clamp(2.45rem, 10vw, 3.2rem);
+        letter-spacing: -1.4px;
+      }
+
+      .about-page-actions {
+        flex-direction: column;
+      }
+
+      .about-page-actions .button {
+        width: 100%;
+      }
+
+      .about-brand-visual {
+        min-height: 350px;
+        padding: 18px;
+        border-radius: 30px 75px 30px 75px;
+      }
+
+      .about-brand-card {
+        padding: 28px 20px;
+      }
+
+      .about-location-badge {
+        right: -3px;
+        bottom: 13px;
+        font-size: 0.69rem;
+      }
+
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-category-list {
+        grid-template-columns: 1fr;
+      }
+
+      .about-contact-section {
+        padding-bottom: 60px;
+      }
+
+      .about-contact-box {
+        padding: 28px 22px;
+      }
+
+      .about-contact-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .about-contact-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <p>
+        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+        Serving customers in New Bhokardan, Maharashtra
+      </p>
+
+      <a href="tel:+917745062299">
+        <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+        7745062299
+      </a>
+    </div>
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <span class="brand-symbol" aria-hidden="true">
+          <i class="bi bi-grid-1x2-fill"></i>
+        </span>
+
+        <span class="brand-copy">
+          <span class="brand-name">GURUKRUPA</span>
+          <span class="brand-subtitle">XEROX AND SOHAM MULTISERVICES</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNavigation"
+      >
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="about.html" aria-current="page">About Us</a>
+        <a class="nav-link" href="services.html">Our Services</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+
+        <a class="nav-cta" href="service-request.html">
+          Request a Service
+          <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ABOUT HERO -->
+    <section class="about-page-hero">
+      <div class="container about-page-hero-grid">
+
+        <div>
+          <nav class="about-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            <span>About Us</span>
+          </nav>
+
+          <span class="section-eyebrow" style="margin-top: 25px;">
+            GET TO KNOW OUR BUSINESS
+          </span>
+
+          <h1>
+            One local destination.
+            <span>Multiple service needs.</span>
+          </h1>
+
+          <p>
+            Gurukrupa Xerox And Soham Multiservices is based in
+            Balaji Nagar, New Bhokardan, Maharashtra. We provide a
+            point of contact for customers who need help exploring
+            our available service categories and discussing their
+            individual requirements.
+          </p>
+
+          <div class="about-page-actions">
+            <a class="button button-primary" href="services.html">
+              Explore Our Services
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a class="button button-secondary" href="contact.html">
+              Get in Touch
+              <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+
+        <div class="about-brand-visual">
+
+          <div class="about-brand-card">
+            <div class="about-brand-symbol">
+              <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+            </div>
+
+            <span class="brand-overline">OUR BUSINESS IDENTITY</span>
+
+            <h2>
+              Gurukrupa Xerox
+              <span>And Soham Multiservices</span>
+            </h2>
+
+            <p>
+              A local business serving multiple customer requirements
+              from one convenient point of contact.
+            </p>
+          </div>
+
+          <div class="about-location-badge">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            Balaji Nagar, New Bhokardan
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BUSINESS INTRODUCTION -->
+    <section class="about-introduction">
+      <div class="container about-introduction-grid">
+
+        <div class="about-section-title">
+          <span class="section-eyebrow">WHO WE ARE</span>
+
+          <h2>
+            A business built around
+            <span>different needs.</span>
+          </h2>
+        </div>
+
+
+        <div class="about-section-copy">
+          <p>
+            Everyday tasks can involve forms, documents, digital
+            information and other service requirements. Our business
+            brings several broad service categories together so
+            customers have one place to enquire about the assistance
+            they are looking for.
+          </p>
+
+          <p>
+            Our service categories include government-related
+            assistance, form filling, income tax assistance,
+            data entry, documentation support and Xerox/printing.
+            The exact services available within each category
+            are confirmed directly with the business.
+          </p>
+
+          <p>
+            We aim to communicate clearly about the requirement,
+            the applicable charges and the next steps before
+            agreed work begins.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICE PRINCIPLES -->
+    <section class="about-principles">
+      <div class="container">
+
+        <div class="about-centered-heading">
+          <span class="section-eyebrow">OUR APPROACH</span>
+
+          <h2>
+            What matters in
+            <span>every request.</span>
+          </h2>
+
+          <p>
+            Our approach is centred on clear communication,
+            understanding the requirement and explaining the
+            next steps before work proceeds.
+          </p>
+        </div>
+
+
+        <div class="principles-grid">
+
+          <article class="principle-card">
+            <div class="principle-icon">
+              <i class="bi bi-chat-square-text" aria-hidden="true"></i>
+            </div>
+
+            <h3>Clear Communication</h3>
+
+            <p>
+              We aim to understand what you need and explain the
+              process in straightforward language.
+            </p>
+          </article>
+
+
+          <article class="principle-card">
+            <div class="principle-icon">
+              <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+            </div>
+
+            <h3>Requirement Review</h3>
+
+            <p>
+              Each enquiry can be reviewed to confirm whether the
+              requested work is available and what it involves.
+            </p>
+          </article>
+
+
+          <article class="principle-card">
+            <div class="principle-icon">
+              <i class="bi bi-receipt" aria-hidden="true"></i>
+            </div>
+
+            <h3>Price Confirmation</h3>
+
+            <p>
+              The intended process is to communicate applicable
+              charges before the agreed work begins.
+            </p>
+          </article>
+
+
+          <article class="principle-card">
+            <div class="principle-icon">
+              <i class="bi bi-person-lock" aria-hidden="true"></i>
+            </div>
+
+            <h3>Careful Information Handling</h3>
+
+            <p>
+              We aim to request only the information necessary
+              for the service and handle it through appropriate
+              channels.
+            </p>
+          </article>
+
+
+          <article class="principle-card">
+            <div class="principle-icon">
+              <i class="bi bi-diagram-3" aria-hidden="true"></i>
+            </div>
+
+            <h3>Multiple Service Categories</h3>
+
+            <p>
+              Customers can explore different categories and ask
+              which specific services are currently available.
+            </p>
+          </article>
+
+
+          <article class="principle-card">
+            <div class="principle-icon">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            </div>
+
+            <h3>Local Point of Contact</h3>
+
+            <p>
+              Our business is located in Balaji Nagar, New Bhokardan,
+              Maharashtra.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- OUR SERVICE CATEGORIES -->
+    <section class="about-categories">
+      <div class="container about-categories-grid">
+
+        <div class="about-categories-copy">
+          <span class="section-eyebrow">WHAT WE COVER</span>
+
+          <h2>
+            Different categories.
+            <span>One place to enquire.</span>
+          </h2>
+
+          <p>
+            From application-related assistance to digital work and
+            document services, explore our categories to identify
+            the closest match for your requirement.
+          </p>
+
+          <p>
+            Our detailed service list can be updated as the
+            business confirms the exact work offered under each
+            category.
+          </p>
+
+          <a class="text-link" href="services.html">
+            View Service Categories
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+
+        <div class="about-category-list">
+
+          <a class="about-category-item" href="services.html#government-services">
+            <i class="bi bi-building-check" aria-hidden="true"></i>
+            Government-Related Assistance
+          </a>
+
+          <a class="about-category-item" href="services.html#form-filling">
+            <i class="bi bi-ui-checks" aria-hidden="true"></i>
+            Online Form Filling
+          </a>
+
+          <a class="about-category-item" href="services.html#income-tax">
+            <i class="bi bi-calculator" aria-hidden="true"></i>
+            Income Tax Assistance
+          </a>
+
+          <a class="about-category-item" href="services.html#data-entry">
+            <i class="bi bi-keyboard" aria-hidden="true"></i>
+            Data Entry
+          </a>
+
+          <a class="about-category-item" href="services.html#documentation">
+            <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+            Documentation Support
+          </a>
+
+          <a class="about-category-item" href="services.html#xerox-printing">
+            <i class="bi bi-printer" aria-hidden="true"></i>
+            Xerox & Printing
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT CTA -->
+    <section class="about-contact-section">
+      <div class="container">
+
+        <div class="about-contact-box">
+
+          <div>
+            <h2>Have a requirement? Let's talk.</h2>
+
+            <p>
+              Contact Gurukrupa Xerox And Soham Multiservices to
+              discuss your requirement and confirm whether we can
+              help with the work you need.
+            </p>
+          </div>
+
+          <div class="about-contact-actions">
+
+            <a class="button button-light" href="contact.html">
+              Contact Details
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a
+              class="button button-ghost-light"
+              href="https://wa.me/917745062299"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              WhatsApp Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container footer-main">
+
+      <div class="footer-brand-column">
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            <i class="bi bi-grid-1x2-fill"></i>
+          </span>
+
+          <span class="brand-copy">
+            <span class="brand-name">GURUKRUPA</span>
+            <span class="brand-subtitle">XEROX AND SOHAM MULTISERVICES</span>
+          </span>
+        </a>
+
+        <p class="footer-description">
+          A convenient local point of contact for multiple service
+          needs in New Bhokardan, Maharashtra.
+        </p>
+
+        <a
+          class="footer-whatsapp"
+          href="https://wa.me/917745062299"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi bi-whatsapp" aria-hidden="true"></i>
+          Connect on WhatsApp
+        </a>
+      </div>
+
+
+      <div class="footer-links-column">
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+
+      <div class="footer-links-column">
+        <h3>Service Categories</h3>
+        <a href="services.html#government-services">Government-Related Work</a>
+        <a href="services.html#form-filling">Form Filling</a>
+        <a href="services.html#income-tax">Income Tax Assistance</a>
+        <a href="services.html#data-entry">Data Entry</a>
+        <a href="services.html#xerox-printing">Xerox & Printing</a>
+      </div>
+
+
+      <div class="footer-links-column footer-contact-column">
+        <h3>Contact</h3>
+
+        <a href="tel:+917745062299">
+          <i class="bi bi-telephone" aria-hidden="true"></i>
+          7745062299
+        </a>
+
+        <a href="mailto:narayan.katore9@gmail.com">
+          <i class="bi bi-envelope" aria-hidden="true"></i>
+          Email Us
+        </a>
+
+        <p>
+          <i class="bi bi-geo-alt" aria-hidden="true"></i>
+          Plot No. 48, Balaji Nagar, New Bhokardan,
+          Maharashtra 431114
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="container footer-legal">
+
+      <div class="footer-legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cancellation-refunds.html">Cancellation & Refunds</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        Independent service business. Government-related assistance,
+        where available, is subject to the applicable authority's
+        rules and requirements.
+      </p>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear">2026</span>
+          Gurukrupa Xerox And Soham Multiservices.
+          All rights reserved.
+        </p>
+
+        <a href="#top" class="back-to-top">
+          Back to Top
+          <i class="bi bi-arrow-up" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/917745062299"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+  >
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <span>Chat with Us</span>
+  </a>
+
+
+  <a class="skip-link" href="#about-introduction">
+    Skip to main content
+  </a>
+
+</body>
+</html>
