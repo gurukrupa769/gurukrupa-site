@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Services | Gurukrupa Xerox And Soham Multiservices</title>
+
+  <meta
+    name="description"
+    content="Explore government-related assistance, form filling, income tax assistance, data entry, documentation support and Xerox services at Gurukrupa Xerox And Soham Multiservices, New Bhokardan."
+  >
+
+  <meta name="theme-color" content="#142D4E">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <script src="script.js" defer></script>
+
+  <style>
+    /* Services-page-specific styles */
+
+    .page-hero {
+      padding: 82px 0 75px;
+      background:
+        radial-gradient(
+          ellipse at 85% 15%,
+          rgba(199, 164, 93, 0.15),
+          transparent 34%
+        ),
+        linear-gradient(180deg, #ffffff, #f3f5f8);
+      border-bottom: 1px solid #e4e9f0;
+    }
+
+    .page-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.65fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      color: #718096;
+      font-size: 0.78rem;
+    }
+
+    .breadcrumb a {
+      color: #142d4e;
+      font-weight: 700;
+    }
+
+    .breadcrumb i {
+      color: #c7a45d;
+    }
+
+    .page-hero h1 {
+      max-width: 750px;
+      margin-top: 25px;
+      color: #142d4e;
+      font-size: clamp(2.5rem, 5vw, 4.1rem);
+      font-weight: 850;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .page-hero h1 span {
+      color: #c7a45d;
+    }
+
+    .page-hero-description {
+      max-width: 650px;
+      margin-top: 22px;
+      color: #536277;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .page-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .page-hero-visual {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .page-hero-tile {
+      min-height: 135px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 21px;
+      background: #ffffff;
+      border: 1px solid #e4e9f0;
+      border-radius: 17px;
+      box-shadow: 0 8px 24px rgba(20, 45, 78, 0.05);
+    }
+
+    .page-hero-tile:nth-child(even) {
+      transform: translateY(18px);
+    }
+
+    .page-hero-tile i {
+      color: #c7a45d;
+      font-size: 1.7rem;
+    }
+
+    .page-hero-tile span {
+      color: #142d4e;
+      font-size: 0.86rem;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .service-catalogue {
+      padding: 85px 0;
+      background: #ffffff;
+    }
+
+    .service-catalogue-heading {
+      max-width: 760px;
+      margin-bottom: 35px;
+    }
+
+    .service-catalogue-heading h2 {
+      margin-top: 12px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: -1.2px;
+    }
+
+    .service-catalogue-heading p {
+      margin-top: 15px;
+      color: #536277;
+      line-height: 1.9;
+    }
+
+    .service-catalogue-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .catalogue-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 325px;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid #e4e9f0;
+      border-radius: 17px;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .catalogue-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(20, 45, 78, 0.1);
+    }
+
+    .catalogue-card:target {
+      border-color: #c7a45d;
+      box-shadow: 0 0 0 3px rgba(199, 164, 93, 0.17);
+    }
+
+    .catalogue-card-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      color: #142d4e;
+      background: #f3f5f8;
+      border-radius: 15px;
+      font-size: 1.4rem;
+    }
+
+    .catalogue-card h3 {
+      margin-top: 22px;
+      color: #142d4e;
+      font-size: 1.12rem;
+      font-weight: 850;
+      line-height: 1.5;
+    }
+
+    .catalogue-card p {
+      margin-top: 11px;
+      color: #536277;
+      font-size: 0.87rem;
+      line-height: 1.85;
+    }
+
+    .catalogue-card .service-link {
+      margin-top: auto;
+      padding-top: 23px;
+    }
+
+    .catalogue-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin-top: 28px;
+      padding: 20px;
+      color: #536277;
+      background: #f3f5f8;
+      border: 1px solid #e4e9f0;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .catalogue-note > i {
+      margin-top: 4px;
+      color: #142d4e;
+      font-size: 1.1rem;
+    }
+
+    .catalogue-note strong {
+      color: #142d4e;
+    }
+
+    .request-process {
+      padding: 82px 0;
+      background: #f8fafc;
+    }
+
+    .request-process-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .request-process-intro h2 {
+      margin-top: 12px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .request-process-intro p {
+      margin-top: 17px;
+      color: #536277;
+      line-height: 1.9;
+    }
+
+    .request-process-steps {
+      display: grid;
+      gap: 13px;
+    }
+
+    .request-process-step {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      background: #ffffff;
+      border: 1px solid #e4e9f0;
+      border-radius: 14px;
+    }
+
+    .request-process-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: #142d4e;
+      background: #f8f0dc;
+      border-radius: 12px;
+      font-weight: 850;
+    }
+
+    .request-process-step h3 {
+      color: #142d4e;
+      font-size: 0.95rem;
+      font-weight: 850;
+    }
+
+    .request-process-step p {
+      margin-top: 5px;
+      color: #536277;
+      font-size: 0.83rem;
+      line-height: 1.8;
+    }
+
+    .services-contact-cta {
+      padding: 0 0 85px;
+      background: #f8fafc;
+    }
+
+    .services-contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 38px;
+      color: #ffffff;
+      background: #142d4e;
+      border-radius: 22px;
+    }
+
+    .services-contact-box h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .services-contact-box p {
+      max-width: 650px;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .services-contact-box .button {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .page-hero-grid,
+      .request-process-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .page-hero-visual {
+        max-width: 560px;
+      }
+
+      .service-catalogue-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .request-process-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        padding: 55px 0;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.4rem, 10vw, 3.1rem);
+        letter-spacing: -1.4px;
+      }
+
+      .page-hero-actions {
+        flex-direction: column;
+      }
+
+      .page-hero-actions .button {
+        width: 100%;
+      }
+
+      .page-hero-visual {
+        gap: 10px;
+      }
+
+      .page-hero-tile {
+        min-height: 115px;
+        padding: 16px;
+      }
+
+      .service-catalogue,
+      .request-process {
+        padding: 60px 0;
+      }
+
+      .service-catalogue-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .catalogue-card {
+        min-height: 285px;
+        padding: 23px;
+      }
+
+      .services-contact-cta {
+        padding-bottom: 60px;
+      }
+
+      .services-contact-box {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 28px 23px;
+      }
+
+      .services-contact-box .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP ANNOUNCEMENT -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <p>
+        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+        Serving customers in New Bhokardan, Maharashtra
+      </p>
+
+      <a href="tel:+917745062299">
+        <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+        7745062299
+      </a>
+    </div>
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <span class="brand-symbol" aria-hidden="true">
+          <i class="bi bi-grid-1x2-fill"></i>
+        </span>
+
+        <span class="brand-copy">
+          <span class="brand-name">GURUKRUPA</span>
+          <span class="brand-subtitle">XEROX AND SOHAM MULTISERVICES</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNavigation"
+      >
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link active" href="services.html" aria-current="page">Our Services</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+
+        <a class="nav-cta" href="service-request.html">
+          Request a Service
+          <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- PAGE INTRODUCTION -->
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            <span>Our Services</span>
+          </nav>
+
+          <span class="section-eyebrow" style="margin-top: 25px;">
+            ONE PLACE, MULTIPLE NEEDS
+          </span>
+
+          <h1>
+            Explore our
+            <span>services.</span>
+          </h1>
+
+          <p class="page-hero-description">
+            Need assistance with an application, tax-related work,
+            data entry or documentation? Explore our service categories
+            and contact us to discuss what you need.
+          </p>
+
+          <div class="page-hero-actions">
+            <a class="button button-primary" href="#service-catalogue">
+              Explore Categories
+              <i class="bi bi-arrow-down" aria-hidden="true"></i>
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://wa.me/917745062299"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              Ask Us on WhatsApp
+            </a>
+          </div>
+        </div>
+
+
+        <div class="page-hero-visual" aria-label="Our main service categories">
+
+          <div class="page-hero-tile">
+            <i class="bi bi-building-check" aria-hidden="true"></i>
+            <span>Government-Related Assistance</span>
+          </div>
+
+          <div class="page-hero-tile">
+            <i class="bi bi-ui-checks" aria-hidden="true"></i>
+            <span>Form Filling</span>
+          </div>
+
+          <div class="page-hero-tile">
+            <i class="bi bi-calculator" aria-hidden="true"></i>
+            <span>Income Tax Assistance</span>
+          </div>
+
+          <div class="page-hero-tile">
+            <i class="bi bi-keyboard" aria-hidden="true"></i>
+            <span>Data Entry</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICE CATALOGUE -->
+    <section class="service-catalogue" id="service-catalogue">
+      <div class="container">
+
+        <div class="service-catalogue-heading">
+          <span class="section-eyebrow">OUR SERVICE CATEGORIES</span>
+
+          <h2>
+            What can we help you
+            <span class="text-accent">with?</span>
+          </h2>
+
+          <p>
+            These are our main service categories. The exact services,
+            eligibility requirements, documents and charges depend on
+            the work requested. Contact us to confirm availability
+            before submitting sensitive information.
+          </p>
+        </div>
+
+
+        <div class="service-catalogue-grid">
+
+          <!-- GOVERNMENT-RELATED ASSISTANCE -->
+          <article class="catalogue-card" id="government-services">
+            <div class="catalogue-card-icon">
+              <i class="bi bi-building-check" aria-hidden="true"></i>
+            </div>
+
+            <h3>Government-Related Assistance</h3>
+
+            <p>
+              Discuss your government-related application or
+              documentation requirement with us. We will confirm
+              whether we can assist with the specific task.
+            </p>
+
+            <a
+              class="service-link"
+              href="service-request.html?service=government"
+            >
+              Enquire About This Service
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+
+          <!-- FORM FILLING -->
+          <article class="catalogue-card" id="form-filling">
+            <div class="catalogue-card-icon">
+              <i class="bi bi-ui-checks" aria-hidden="true"></i>
+            </div>
+
+            <h3>Online Form Filling</h3>
+
+            <p>
+              Ask about assistance with online forms, application
+              details and the information required for your
+              particular submission.
+            </p>
+
+            <a
+              class="service-link"
+              href="service-request.html?service=form-filling"
+            >
+              Enquire About This Service
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+
+          <!-- INCOME TAX -->
+          <article class="catalogue-card" id="income-tax">
+            <div class="catalogue-card-icon">
+              <i class="bi bi-calculator" aria-hidden="true"></i>
+            </div>
+
+            <h3>Income Tax Assistance</h3>
+
+            <p>
+              Contact us about your income tax-related requirement.
+              We will confirm the particular work available and
+              the applicable process and charges.
+            </p>
+
+            <a
+              class="service-link"
+              href="service-request.html?service=income-tax"
+            >
+              Enquire About This Service
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+
+          <!-- DATA ENTRY -->
+          <article class="catalogue-card" id="data-entry">
+            <div class="catalogue-card-icon">
+              <i class="bi bi-keyboard" aria-hidden="true"></i>
+            </div>
+
+            <h3>Data Entry Services</h3>
+
+            <p>
+              Tell us about your data entry or digital documentation
+              requirement so we can review the scope and confirm
+              whether it can be undertaken.
+            </p>
+
+            <a
+              class="service-link"
+              href="service-request.html?service=data-entry"
+            >
+              Enquire About This Service
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+
+          <!-- DOCUMENTATION -->
+          <article class="catalogue-card" id="documentation">
+            <div class="catalogue-card-icon">
+              <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+            </div>
+
+            <h3>Documentation Support</h3>
+
+            <p>
+              Discuss document preparation or related support for
+              your requirement. The available assistance will be
+              confirmed before work begins.
+            </p>
+
+            <a
+              class="service-link"
+              href="service-request.html?service=documentation"
+            >
+              Enquire About This Service
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+
+          <!-- XEROX AND PRINTING -->
+          <article class="catalogue-card" id="xerox-printing">
+            <div class="catalogue-card-icon">
+              <i class="bi bi-printer" aria-hidden="true"></i>
+            </div>
+
+            <h3>Xerox & Printing</h3>
+
+            <p>
+              Contact us about available photocopying, printing
+              and related document services.
+            </p>
+
+            <a
+              class="service-link"
+              href="service-request.html?service=xerox-printing"
+            >
+              Enquire About This Service
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+        </div>
+
+
+        <div class="catalogue-note">
+          <i class="bi bi-info-circle" aria-hidden="true"></i>
+
+          <p>
+            <strong>Important:</strong>
+            This page describes broad categories, not a final list
+            of every service offered. Government-related assistance
+            does not imply government affiliation. Service availability
+            and charges must be confirmed directly with the business.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- REQUEST PROCESS -->
+    <section class="request-process">
+      <div class="container request-process-grid">
+
+        <div class="request-process-intro">
+          <span class="section-eyebrow">OUR PROCESS</span>
+
+          <h2>
+            Simple steps.
+            <span class="text-accent">Clear expectations.</span>
+          </h2>
+
+          <p>
+            We follow a review-first approach. Your requirement
+            should be understood and the charges discussed before
+            the agreed work begins.
+          </p>
+
+          <a class="button button-primary" href="service-request.html" style="margin-top: 25px;">
+            Start an Enquiry
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+
+        <div class="request-process-steps">
+
+          <article class="request-process-step">
+            <span class="request-process-number">01</span>
+
+            <div>
+              <h3>Choose a Category</h3>
+              <p>
+                Identify the service category closest to your requirement.
+              </p>
+            </div>
+          </article>
+
+
+          <article class="request-process-step">
+            <span class="request-process-number">02</span>
+
+            <div>
+              <h3>Share Basic Details</h3>
+              <p>
+                Explain what you need. Share only the information
+                necessary for the initial enquiry.
+              </p>
+            </div>
+          </article>
+
+
+          <article class="request-process-step">
+            <span class="request-process-number">03</span>
+
+            <div>
+              <h3>Wait for Review and Price Confirmation</h3>
+              <p>
+                We review the requirement and confirm availability,
+                charges and the next steps.
+              </p>
+            </div>
+          </article>
+
+
+          <article class="request-process-step">
+            <span class="request-process-number">04</span>
+
+            <div>
+              <h3>Proceed After Confirmation</h3>
+              <p>
+                Work proceeds only after the agreed conditions and
+                payment arrangements, where applicable, are confirmed.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT CTA -->
+    <section class="services-contact-cta">
+      <div class="container">
+
+        <div class="services-contact-box">
+
+          <div>
+            <h2>Not sure which service you need?</h2>
+
+            <p>
+              Tell us what you are trying to get done. We can discuss
+              your requirement and confirm whether the service is available.
+            </p>
+          </div>
+
+          <a
+            class="button button-light"
+            href="https://wa.me/917745062299"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            Contact Us on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container footer-main">
+
+      <div class="footer-brand-column">
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            <i class="bi bi-grid-1x2-fill"></i>
+          </span>
+
+          <span class="brand-copy">
+            <span class="brand-name">GURUKRUPA</span>
+            <span class="brand-subtitle">XEROX AND SOHAM MULTISERVICES</span>
+          </span>
+        </a>
+
+        <p class="footer-description">
+          A convenient local point of contact for multiple service
+          needs in New Bhokardan, Maharashtra.
+        </p>
+
+        <a
+          class="footer-whatsapp"
+          href="https://wa.me/917745062299"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi bi-whatsapp" aria-hidden="true"></i>
+          Connect on WhatsApp
+        </a>
+      </div>
+
+
+      <div class="footer-links-column">
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+
+      <div class="footer-links-column">
+        <h3>Service Categories</h3>
+        <a href="#government-services">Government-Related Work</a>
+        <a href="#form-filling">Form Filling</a>
+        <a href="#income-tax">Income Tax Assistance</a>
+        <a href="#data-entry">Data Entry</a>
+        <a href="#xerox-printing">Xerox & Printing</a>
+      </div>
+
+
+      <div class="footer-links-column footer-contact-column">
+        <h3>Contact</h3>
+
+        <a href="tel:+917745062299">
+          <i class="bi bi-telephone" aria-hidden="true"></i>
+          7745062299
+        </a>
+
+        <a href="mailto:narayan.katore9@gmail.com">
+          <i class="bi bi-envelope" aria-hidden="true"></i>
+          Email Us
+        </a>
+
+        <p>
+          <i class="bi bi-geo-alt" aria-hidden="true"></i>
+          Plot No. 48, Balaji Nagar, New Bhokardan,
+          Maharashtra 431114
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="container footer-legal">
+
+      <div class="footer-legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cancellation-refunds.html">Cancellation & Refunds</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        Independent service business. Government-related assistance,
+        where available, is subject to the applicable authority's
+        rules and requirements.
+      </p>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear">2026</span>
+          Gurukrupa Xerox And Soham Multiservices.
+          All rights reserved.
+        </p>
+
+        <a href="#top" class="back-to-top">
+          Back to Top
+          <i class="bi bi-arrow-up" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/917745062299"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+  >
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <span>Chat with Us</span>
+  </a>
+
+
+  <a class="skip-link" href="#service-catalogue">
+    Skip to services
+  </a>
+
+</body>
+</html>
