@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | Gurukrupa Xerox And Soham Multiservices</title>
+  <meta
+    name="description"
+    content="Contact Gurukrupa Xerox And Soham Multiservices in New Bhokardan, Maharashtra, for service enquiries, online form assistance, documentation support and more."
+  >
+  <meta name="theme-color" content="#142d4e">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .contact-page-hero {
+      padding: 78px 20px 65px;
+      text-align: center;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(199,164,93,.18), transparent 28%),
+        linear-gradient(135deg, #0c2039, #142d4e 65%, #24466d);
+    }
+
+    .contact-page-hero .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #e7d5a8;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-page-hero h1 {
+      max-width: 800px;
+      margin: 0 auto 18px;
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      line-height: 1.12;
+    }
+
+    .contact-page-hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.82);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .contact-page-section {
+      padding: 65px 20px;
+    }
+
+    .contact-page-container {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .contact-section-heading {
+      max-width: 700px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .contact-section-heading .eyebrow {
+      color: #a17d38;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .contact-section-heading h2 {
+      margin: 10px 0 12px;
+      color: #142d4e;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .contact-section-heading p {
+      color: #647084;
+      line-height: 1.8;
+    }
+
+    .contact-details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .contact-detail-card {
+      padding: 28px;
+      border: 1px solid #e4e8ef;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 12px 35px rgba(20,45,78,.055);
+    }
+
+    .contact-detail-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 14px;
+      background: #f3f5f8;
+      color: #142d4e;
+      font-size: 1.45rem;
+    }
+
+    .contact-detail-card h3 {
+      margin: 0 0 9px;
+      color: #142d4e;
+      font-size: 1.18rem;
+    }
+
+    .contact-detail-card p {
+      margin: 0 0 16px;
+      color: #647084;
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-detail-card a {
+      color: #142d4e;
+      font-weight: 750;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-detail-card a:hover {
+      color: #94702f;
+      text-decoration: underline;
+    }
+
+    .contact-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .contact-address-card {
+      grid-column: 1 / -1;
+    }
+
+    .contact-hours-note {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px solid #eadfca;
+      border-radius: 16px;
+      background: #fcfaf5;
+    }
+
+    .contact-hours-note .hours-icon {
+      font-size: 1.5rem;
+    }
+
+    .contact-hours-note h3 {
+      margin: 0 0 6px;
+      color: #142d4e;
+      font-size: 1.05rem;
+    }
+
+    .contact-hours-note p {
+      margin: 0;
+      color: #647084;
+      line-height: 1.7;
+    }
+
+    .contact-map-section {
+      padding: 0 20px 70px;
+    }
+
+    .contact-map-panel {
+      overflow: hidden;
+      border: 1px solid #e4e8ef;
+      border-radius: 20px;
+      background: #f3f5f8;
+    }
+
+    .contact-map-content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .contact-map-content h2 {
+      margin: 0 0 12px;
+      color: #142d4e;
+    }
+
+    .contact-map-content p {
+      max-width: 620px;
+      margin: 0 auto 20px;
+      color: #647084;
+      line-height: 1.8;
+    }
+
+    .contact-map-placeholder {
+      display: grid;
+      min-height: 190px;
+      padding: 25px;
+      place-items: center;
+      background:
+        linear-gradient(rgba(20,45,78,.04), rgba(20,45,78,.04)),
+        repeating-linear-gradient(
+          45deg,
+          #edf0f5,
+          #edf0f5 12px,
+          #f5f6f9 12px,
+          #f5f6f9 24px
+        );
+      text-align: center;
+    }
+
+    .contact-map-placeholder .map-pin {
+      margin-bottom: 10px;
+      font-size: 2.3rem;
+    }
+
+    .contact-map-placeholder p {
+      max-width: 450px;
+      margin: 0;
+      color: #536176;
+      line-height: 1.7;
+    }
+
+    .contact-review-panel {
+      padding: 38px;
+      border-radius: 20px;
+      background: #142d4e;
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact-review-panel h2 {
+      margin: 0 0 13px;
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+    }
+
+    .contact-review-panel p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      color: rgba(255,255,255,.8);
+      line-height: 1.8;
+    }
+
+    .contact-review-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .contact-review-actions a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid #c7a45d;
+      border-radius: 999px;
+      background: #c7a45d;
+      color: #142d4e;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .contact-review-actions a:hover {
+      transform: translateY(-2px);
+      background: #e7d5a8;
+    }
+
+    .contact-review-actions a.secondary {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,.35);
+    }
+
+    .contact-review-actions a.secondary:hover {
+      background: rgba(255,255,255,.09);
+    }
+
+    .contact-disclaimer {
+      margin: 24px auto 0;
+      max-width: 850px;
+      color: #7b8492;
+      font-size: .88rem;
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .contact-page-hero {
+        padding: 58px 20px 48px;
+      }
+
+      .contact-page-section {
+        padding: 48px 18px;
+      }
+
+      .contact-details-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .contact-address-card {
+        grid-column: auto;
+      }
+
+      .contact-detail-card {
+        padding: 23px;
+      }
+
+      .contact-map-section {
+        padding: 0 18px 48px;
+      }
+
+      .contact-map-content {
+        padding: 24px 18px;
+      }
+
+      .contact-review-panel {
+        padding: 28px 20px;
+      }
+
+      .contact-review-actions {
+        flex-direction: column;
+      }
+
+      .contact-review-actions a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .contact-review-actions a {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- Announcement bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>Welcome to Gurukrupa Xerox And Soham Multiservices</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Gurukrupa Xerox And Soham Multiservices home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-copy">
+          <span class="brand-name">Gurukrupa Xerox</span>
+          <span class="brand-subtitle">And Soham Multiservices</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="mainNavigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn-primary nav-cta" href="service-request.html">Request a Service</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page introduction -->
+    <section class="contact-page-hero">
+      <span class="eyebrow">We’re Here to Help</span>
+      <h1>Let’s Talk About What You Need.</h1>
+      <p>
+        Have a question or need assistance? Contact our team to discuss your
+        requirements. We’ll review your enquiry and confirm the available
+        service, documents, charges and next steps with you.
+      </p>
+    </section>
+
+    <!-- Contact details -->
+    <section class="contact-page-section" id="contact-details">
+      <div class="contact-page-container">
+
+        <div class="contact-section-heading">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Choose How You’d Like to Contact Us</h2>
+          <p>
+            Call, send a WhatsApp message, or email us. Please avoid sending
+            sensitive identity documents until the required service and
+            submission method have been confirmed.
+          </p>
+        </div>
+
+        <div class="contact-details-grid">
+
+          <!-- Phone -->
+          <article class="contact-detail-card">
+            <div class="contact-detail-icon" aria-hidden="true">☎</div>
+            <h3>Call Us</h3>
+            <p>
+              Speak with us about your enquiry, service requirements or
+              next steps.
+            </p>
+            <a class="contact-action-link" href="tel:+917745062299">
+              +91 77450 62299 →
+            </a>
+          </article>
+
+          <!-- WhatsApp -->
+          <article class="contact-detail-card">
+            <div class="contact-detail-icon" aria-hidden="true">✉</div>
+            <h3>WhatsApp</h3>
+            <p>
+              Send a message describing the service you need. We can review
+              your request before confirming the next step.
+            </p>
+            <a
+              class="contact-action-link"
+              href="https://wa.me/917745062299?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Message on WhatsApp →
+            </a>
+          </article>
+
+          <!-- Email -->
+          <article class="contact-detail-card">
+            <div class="contact-detail-icon" aria-hidden="true">✉</div>
+            <h3>Email Us</h3>
+            <p>
+              For written enquiries, share a short description of your
+              requirement and your preferred way to receive a reply.
+            </p>
+            <a
+              class="contact-action-link"
+              href="mailto:narayan.katore9@gmail.com?subject=Service%20Enquiry"
+            >
+              narayan.katore9@gmail.com →
+            </a>
+          </article>
+
+          <!-- Address -->
+          <article class="contact-detail-card contact-address-card">
+            <div class="contact-detail-icon" aria-hidden="true">⌖</div>
+            <h3>Visit Our Location</h3>
+            <p>
+              Plot No. 48, Balaji Nagar,<br>
+              New Bhokardan, Maharashtra 431114, India.
+            </p>
+            <a
+              class="contact-action-link"
+              href="https://www.google.com/maps/search/?api=1&query=Plot+No.+48%2C+Balaji+Nagar%2C+New+Bhokardan%2C+Maharashtra+431114"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Find us on Google Maps →
+            </a>
+          </article>
+
+        </div>
+
+        <!-- Opening hours placeholder -->
+        <div class="contact-hours-note">
+          <span class="hours-icon" aria-hidden="true">◷</span>
+          <div>
+            <h3>Opening Hours</h3>
+            <p>
+              Please contact us to confirm our current business hours and
+              availability before visiting. Published opening hours will be
+              added once confirmed.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Map directions -->
+    <section class="contact-map-section" aria-labelledby="map-heading">
+      <div class="contact-page-container">
+        <div class="contact-map-panel">
+
+          <div class="contact-map-placeholder">
+            <div>
+              <div class="map-pin" aria-hidden="true">📍</div>
+              <p>
+                <strong>Gurukrupa Xerox And Soham Multiservices</strong><br>
+                Balaji Nagar, New Bhokardan, Maharashtra 431114
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-map-content">
+            <h2 id="map-heading">Planning to Visit?</h2>
+            <p>
+              Open Google Maps for directions to our listed business address.
+              If you are travelling from another area, check the route before
+              starting your journey.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Plot+No.+48%2C+Balaji+Nagar%2C+New+Bhokardan%2C+Maharashtra+431114"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Directions →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Review-first service workflow -->
+    <section class="contact-page-section">
+      <div class="contact-page-container">
+
+        <div class="contact-review-panel">
+          <h2>Not Sure Which Service You Need?</h2>
+          <p>
+            Tell us what you are trying to do. We’ll review your enquiry,
+            confirm whether the service is available, explain the expected
+            charges and required information, and obtain your approval
+            before proceeding.
+          </p>
+
+          <div class="contact-review-actions">
+            <a href="service-request.html">Start a Service Enquiry</a>
+            <a
+              class="secondary"
+              href="https://wa.me/917745062299?text=Hello%2C%20I%20need%20help%20understanding%20which%20service%20I%20require."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <p class="contact-disclaimer">
+          Gurukrupa Xerox And Soham Multiservices is an independent service
+          provider. It is not a government office and does not imply government
+          affiliation or endorsement. Government-related services, where
+          offered, are subject to eligibility, applicable rules and the
+          availability of authorized processes. Service availability, charges
+          and completion timelines must be confirmed before work begins.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="index.html">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-copy">
+            <span class="brand-name">Gurukrupa Xerox</span>
+            <span class="brand-subtitle">And Soham Multiservices</span>
+          </span>
+        </a>
+        <p>
+          Practical service assistance, with clear communication and
+          customer approval before work proceeds.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Customer Help</h3>
+        <a href="service-request.html">Service Enquiry</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cancellation-refunds.html">Cancellations & Refunds</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <a href="tel:+917745062299">+91 77450 62299</a>
+        <a href="mailto:narayan.katore9@gmail.com">
+          narayan.katore9@gmail.com
+        </a>
+        <p>Balaji Nagar, New Bhokardan, Maharashtra 431114</p>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>
+        © <span id="currentYear"></span>
+        Gurukrupa Xerox And Soham Multiservices. All rights reserved.
+      </p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/917745062299?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+  >
+    <span aria-hidden="true">✆</span>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
