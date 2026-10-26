@@ -5,344 +5,609 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact Us | Gurukrupa Xerox And Soham Multiservices</title>
-  <meta
-    name="description"
-    content="Contact Gurukrupa Xerox And Soham Multiservices in New Bhokardan, Maharashtra, for service enquiries, online form assistance, documentation support and more."
-  >
+  <title>Contact | Gurukrupa Xerox And Soham Multiservices</title>
+  <meta name="description" content="Contact Gurukrupa Xerox And Soham Multiservices in New Bhokardan, Maharashtra. Call, WhatsApp or email us about your service requirements.">
   <meta name="theme-color" content="#142d4e">
-  <meta name="robots" content="index, follow">
 
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .contact-page-hero {
-      padding: 78px 20px 65px;
-      text-align: center;
-      color: #fff;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(199,164,93,.18), transparent 28%),
-        linear-gradient(135deg, #0c2039, #142d4e 65%, #24466d);
+    /* CONTACT PAGE */
+    .contact-page {
+      color: #25344a;
+      background: #fff;
     }
 
-    .contact-page-hero .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
+    .contact-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 82px 22px 88px;
+      background: #102541;
+      color: #fff;
+    }
+
+    .contact-hero::before,
+    .contact-hero::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      border: 1px solid rgba(231, 213, 168, .17);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .contact-hero::before {
+      width: 430px;
+      height: 430px;
+      top: -240px;
+      right: -70px;
+    }
+
+    .contact-hero::after {
+      width: 300px;
+      height: 300px;
+      top: -175px;
+      right: -5px;
+    }
+
+    .contact-hero-inner {
+      width: min(1100px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .contact-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
       color: #e7d5a8;
-      font-size: .78rem;
+      font-size: .76rem;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .contact-page-hero h1 {
-      max-width: 800px;
-      margin: 0 auto 18px;
-      font-size: clamp(2.1rem, 5vw, 3.8rem);
-      line-height: 1.12;
+    .contact-eyebrow::before {
+      width: 28px;
+      height: 2px;
+      background: #c7a45d;
+      content: "";
     }
 
-    .contact-page-hero p {
-      max-width: 650px;
-      margin: 0 auto;
-      color: rgba(255,255,255,.82);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    .contact-page-section {
-      padding: 65px 20px;
-    }
-
-    .contact-page-container {
-      width: min(1100px, 100%);
-      margin: 0 auto;
-    }
-
-    .contact-section-heading {
+    .contact-hero h1 {
       max-width: 700px;
-      margin: 0 auto 38px;
-      text-align: center;
+      margin: 0 0 22px;
+      font-size: clamp(2.6rem, 5.4vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -1.8px;
+      line-height: 1.08;
     }
 
-    .contact-section-heading .eyebrow {
-      color: #a17d38;
-      font-size: .76rem;
+    .contact-hero h1 span {
+      color: #e7d5a8;
+    }
+
+    .contact-hero-copy {
+      max-width: 610px;
+      margin: 0;
+      color: #d2dbe7;
+      font-size: 1.04rem;
+      line-height: 1.9;
+    }
+
+    .contact-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border: 1px solid #c7a45d;
+      border-radius: 8px;
+      background: #c7a45d;
+      color: #142d4e;
+      font-size: .93rem;
       font-weight: 800;
-      letter-spacing: 1.8px;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      background: #e7d5a8;
+    }
+
+    .contact-btn-outline {
+      border-color: rgba(255,255,255,.35);
+      background: transparent;
+      color: #fff;
+    }
+
+    .contact-btn-outline:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    .contact-hero-card {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      background: rgba(255,255,255,.055);
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-hero-card-label {
+      margin-bottom: 17px;
+      color: #e7d5a8;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
     }
 
-    .contact-section-heading h2 {
-      margin: 10px 0 12px;
-      color: #142d4e;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      line-height: 1.2;
+    .contact-hero-card h2 {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 1.55rem;
+      line-height: 1.35;
     }
 
-    .contact-section-heading p {
-      color: #647084;
+    .contact-hero-card p {
+      margin: 0;
+      color: #d2dbe7;
+      font-size: .94rem;
       line-height: 1.8;
     }
 
-    .contact-details-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+    .contact-hero-card-divider {
+      height: 1px;
+      margin: 23px 0;
+      background: rgba(255,255,255,.15);
     }
 
-    .contact-detail-card {
-      padding: 28px;
-      border: 1px solid #e4e8ef;
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: 0 12px 35px rgba(20,45,78,.055);
+    .contact-hero-card-address {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
     }
 
-    .contact-detail-icon {
+    .contact-location-symbol {
       display: grid;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 18px;
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
       place-items: center;
+      border-radius: 10px;
+      background: rgba(199,164,93,.15);
+      color: #e7d5a8;
+      font-size: 1.2rem;
+    }
+
+    .contact-hero-card-address strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: .93rem;
+    }
+
+    .contact-hero-card-address span {
+      color: #d2dbe7;
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    /* CONTACT INFORMATION */
+    .contact-main-section {
+      padding: 85px 22px;
+      background: #f5f7fa;
+    }
+
+    .contact-container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .contact-section-intro {
+      max-width: 680px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .contact-section-kicker {
+      color: #98712f;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-section-intro h2 {
+      margin: 13px 0 14px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -.7px;
+      line-height: 1.2;
+    }
+
+    .contact-section-intro p {
+      margin: 0;
+      color: #667389;
+      line-height: 1.9;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .contact-method {
+      position: relative;
+      overflow: hidden;
+      padding: 29px 25px;
+      border: 1px solid #e5e9f0;
       border-radius: 14px;
-      background: #f3f5f8;
+      background: #fff;
+      box-shadow: 0 8px 26px rgba(20,45,78,.035);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .contact-method:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(20,45,78,.08);
+    }
+
+    .contact-method::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #c7a45d;
+      content: "";
+    }
+
+    .contact-method-icon {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 21px;
+      place-items: center;
+      border-radius: 13px;
+      background: #eef2f7;
       color: #142d4e;
       font-size: 1.45rem;
     }
 
-    .contact-detail-card h3 {
-      margin: 0 0 9px;
+    .contact-method h3 {
+      margin: 0 0 10px;
       color: #142d4e;
-      font-size: 1.18rem;
+      font-size: 1.2rem;
     }
 
-    .contact-detail-card p {
-      margin: 0 0 16px;
-      color: #647084;
-      line-height: 1.75;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-detail-card a {
-      color: #142d4e;
-      font-weight: 750;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-detail-card a:hover {
-      color: #94702f;
-      text-decoration: underline;
-    }
-
-    .contact-action-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 2px;
-    }
-
-    .contact-address-card {
-      grid-column: 1 / -1;
-    }
-
-    .contact-hours-note {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      margin-top: 24px;
-      padding: 22px;
-      border: 1px solid #eadfca;
-      border-radius: 16px;
-      background: #fcfaf5;
-    }
-
-    .contact-hours-note .hours-icon {
-      font-size: 1.5rem;
-    }
-
-    .contact-hours-note h3 {
-      margin: 0 0 6px;
-      color: #142d4e;
-      font-size: 1.05rem;
-    }
-
-    .contact-hours-note p {
-      margin: 0;
-      color: #647084;
-      line-height: 1.7;
-    }
-
-    .contact-map-section {
-      padding: 0 20px 70px;
-    }
-
-    .contact-map-panel {
-      overflow: hidden;
-      border: 1px solid #e4e8ef;
-      border-radius: 20px;
-      background: #f3f5f8;
-    }
-
-    .contact-map-content {
-      padding: 30px;
-      text-align: center;
-    }
-
-    .contact-map-content h2 {
-      margin: 0 0 12px;
-      color: #142d4e;
-    }
-
-    .contact-map-content p {
-      max-width: 620px;
-      margin: 0 auto 20px;
-      color: #647084;
+    .contact-method p {
+      min-height: 76px;
+      margin: 0 0 19px;
+      color: #68758a;
+      font-size: .93rem;
       line-height: 1.8;
     }
 
-    .contact-map-placeholder {
+    .contact-method a {
+      color: #142d4e;
+      font-size: .93rem;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .contact-method a:hover {
+      color: #98712f;
+      text-decoration: underline;
+    }
+
+    /* LOCATION */
+    .contact-location-section {
+      padding: 85px 22px;
+      background: #fff;
+    }
+
+    .contact-location-layout {
       display: grid;
-      min-height: 190px;
-      padding: 25px;
-      place-items: center;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 38px;
+      align-items: stretch;
+    }
+
+    .contact-location-copy {
+      padding: 15px 0;
+    }
+
+    .contact-location-copy h2 {
+      margin: 14px 0 18px;
+      color: #142d4e;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      letter-spacing: -.7px;
+      line-height: 1.2;
+    }
+
+    .contact-location-copy > p {
+      color: #667389;
+      line-height: 1.9;
+    }
+
+    .contact-address-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin: 26px 0;
+      padding: 20px;
+      border: 1px solid #e5e9f0;
+      border-radius: 12px;
+      background: #f7f8fa;
+    }
+
+    .contact-address-box h3 {
+      margin: 0 0 7px;
+      color: #142d4e;
+      font-size: 1rem;
+    }
+
+    .contact-address-box p {
+      margin: 0;
+      color: #667389;
+      font-size: .93rem;
+      line-height: 1.8;
+    }
+
+    .contact-map-panel {
+      display: flex;
+      min-height: 360px;
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
+      border: 1px solid #e2e7ef;
+      border-radius: 18px;
       background:
-        linear-gradient(rgba(20,45,78,.04), rgba(20,45,78,.04)),
+        linear-gradient(135deg, rgba(20,45,78,.04), rgba(199,164,93,.10)),
         repeating-linear-gradient(
-          45deg,
-          #edf0f5,
-          #edf0f5 12px,
-          #f5f6f9 12px,
-          #f5f6f9 24px
-        );
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(20,45,78,.055) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 39px,
+          rgba(20,45,78,.055) 40px
+        ),
+        #f5f7fa;
       text-align: center;
     }
 
-    .contact-map-placeholder .map-pin {
-      margin-bottom: 10px;
-      font-size: 2.3rem;
+    .contact-map-inner {
+      max-width: 340px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 16px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 15px 45px rgba(20,45,78,.09);
     }
 
-    .contact-map-placeholder p {
-      max-width: 450px;
+    .contact-map-pin {
+      margin-bottom: 12px;
+      color: #a17d38;
+      font-size: 2.2rem;
+    }
+
+    .contact-map-inner h3 {
+      margin: 0 0 10px;
+      color: #142d4e;
+      font-size: 1.2rem;
+    }
+
+    .contact-map-inner p {
+      margin: 0 0 22px;
+      color: #68758a;
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    /* OPENING HOURS */
+    .contact-hours {
+      display: flex;
+      align-items: flex-start;
+      gap: 17px;
+      margin-top: 30px;
+      padding: 23px;
+      border: 1px solid #e9dfca;
+      border-radius: 12px;
+      background: #fcfaf5;
+    }
+
+    .contact-hours h3 {
+      margin: 0 0 7px;
+      color: #142d4e;
+      font-size: 1.03rem;
+    }
+
+    .contact-hours p {
       margin: 0;
-      color: #536176;
-      line-height: 1.7;
+      color: #68758a;
+      font-size: .92rem;
+      line-height: 1.8;
     }
 
-    .contact-review-panel {
-      padding: 38px;
-      border-radius: 20px;
+    /* FINAL CTA */
+    .contact-final-section {
+      padding: 0 22px 85px;
+      background: #fff;
+    }
+
+    .contact-final-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: min(1100px, 100%);
+      margin: auto;
+      padding: 53px 30px;
+      border-radius: 18px;
       background: #142d4e;
       color: #fff;
       text-align: center;
     }
 
-    .contact-review-panel h2 {
-      margin: 0 0 13px;
-      font-size: clamp(1.6rem, 4vw, 2.25rem);
+    .contact-final-panel::after {
+      position: absolute;
+      z-index: -1;
+      top: -125px;
+      right: -60px;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(231,213,168,.18);
+      border-radius: 50%;
+      content: "";
     }
 
-    .contact-review-panel p {
-      max-width: 680px;
-      margin: 0 auto 24px;
-      color: rgba(255,255,255,.8);
-      line-height: 1.8;
+    .contact-final-panel h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
     }
 
-    .contact-review-actions {
+    .contact-final-panel > p {
+      max-width: 690px;
+      margin: 0 auto 26px;
+      color: #d2dbe7;
+      line-height: 1.9;
+    }
+
+    .contact-final-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 13px;
     }
 
-    .contact-review-actions a {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 48px;
-      padding: 12px 20px;
-      border: 1px solid #c7a45d;
-      border-radius: 999px;
-      background: #c7a45d;
-      color: #142d4e;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .2s ease, background .2s ease;
-    }
-
-    .contact-review-actions a:hover {
-      transform: translateY(-2px);
-      background: #e7d5a8;
-    }
-
-    .contact-review-actions a.secondary {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,.35);
-    }
-
-    .contact-review-actions a.secondary:hover {
-      background: rgba(255,255,255,.09);
-    }
-
-    .contact-disclaimer {
-      margin: 24px auto 0;
-      max-width: 850px;
-      color: #7b8492;
-      font-size: .88rem;
-      line-height: 1.75;
+    .contact-legal-note {
+      max-width: 880px;
+      margin: 28px auto 0;
+      color: #7a8493;
+      font-size: .82rem;
+      line-height: 1.8;
       text-align: center;
     }
 
-    @media (max-width: 680px) {
-      .contact-page-hero {
-        padding: 58px 20px 48px;
-      }
-
-      .contact-page-section {
-        padding: 48px 18px;
-      }
-
-      .contact-details-grid {
+    @media (max-width: 900px) {
+      .contact-hero-inner {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 35px;
       }
 
-      .contact-address-card {
-        grid-column: auto;
+      .contact-hero-card {
+        max-width: 550px;
       }
 
-      .contact-detail-card {
-        padding: 23px;
+      .contact-methods {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .contact-map-section {
-        padding: 0 18px 48px;
+      .contact-location-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
 
-      .contact-map-content {
-        padding: 24px 18px;
+      .contact-location-copy {
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-hero {
+        padding: 60px 20px;
       }
 
-      .contact-review-panel {
-        padding: 28px 20px;
+      .contact-hero h1 {
+        letter-spacing: -1px;
       }
 
-      .contact-review-actions {
+      .contact-hero-actions {
         flex-direction: column;
       }
 
-      .contact-review-actions a {
+      .contact-hero-actions .contact-btn {
+        width: 100%;
+      }
+
+      .contact-hero-card {
+        padding: 23px;
+      }
+
+      .contact-main-section,
+      .contact-location-section {
+        padding: 58px 18px;
+      }
+
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-method {
+        padding: 25px;
+      }
+
+      .contact-method p {
+        min-height: auto;
+      }
+
+      .contact-map-panel {
+        min-height: 300px;
+        padding: 20px;
+      }
+
+      .contact-map-inner {
+        padding: 24px 18px;
+      }
+
+      .contact-final-section {
+        padding: 0 18px 58px;
+      }
+
+      .contact-final-panel {
+        padding: 38px 22px;
+      }
+
+      .contact-final-actions {
+        flex-direction: column;
+      }
+
+      .contact-final-actions .contact-btn {
         width: 100%;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .contact-review-actions a {
+      .contact-btn,
+      .contact-method {
         transition: none;
+      }
+
+      .contact-btn:hover,
+      .contact-method:hover {
+        transform: none;
       }
     }
   </style>
@@ -357,7 +622,7 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Main navigation -->
   <header class="site-header">
     <div class="container header-inner">
 
@@ -394,190 +659,240 @@
     </div>
   </header>
 
-  <main>
+  <main class="contact-page">
 
-    <!-- Page introduction -->
-    <section class="contact-page-hero">
-      <span class="eyebrow">We’re Here to Help</span>
-      <h1>Let’s Talk About What You Need.</h1>
-      <p>
-        Have a question or need assistance? Contact our team to discuss your
-        requirements. We’ll review your enquiry and confirm the available
-        service, documents, charges and next steps with you.
-      </p>
-    </section>
+    <!-- Hero -->
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
 
-    <!-- Contact details -->
-    <section class="contact-page-section" id="contact-details">
-      <div class="contact-page-container">
+        <div>
+          <span class="contact-eyebrow">Contact Our Team</span>
 
-        <div class="contact-section-heading">
-          <span class="eyebrow">Get in Touch</span>
-          <h2>Choose How You’d Like to Contact Us</h2>
-          <p>
-            Call, send a WhatsApp message, or email us. Please avoid sending
-            sensitive identity documents until the required service and
-            submission method have been confirmed.
+          <h1>
+            Your Requirement.<br>
+            <span>Our Next Step.</span>
+          </h1>
+
+          <p class="contact-hero-copy">
+            Need assistance with a service or have a question?
+            Tell us what you need. We’ll review your enquiry, explain
+            the available options and confirm the next steps with you.
           </p>
-        </div>
 
-        <div class="contact-details-grid">
-
-          <!-- Phone -->
-          <article class="contact-detail-card">
-            <div class="contact-detail-icon" aria-hidden="true">☎</div>
-            <h3>Call Us</h3>
-            <p>
-              Speak with us about your enquiry, service requirements or
-              next steps.
-            </p>
-            <a class="contact-action-link" href="tel:+917745062299">
-              +91 77450 62299 →
-            </a>
-          </article>
-
-          <!-- WhatsApp -->
-          <article class="contact-detail-card">
-            <div class="contact-detail-icon" aria-hidden="true">✉</div>
-            <h3>WhatsApp</h3>
-            <p>
-              Send a message describing the service you need. We can review
-              your request before confirming the next step.
-            </p>
+          <div class="contact-hero-actions">
             <a
-              class="contact-action-link"
+              class="contact-btn"
               href="https://wa.me/917745062299?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
             >
-              Message on WhatsApp →
+              WhatsApp Us <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="contact-btn contact-btn-outline" href="tel:+917745062299">
+              Call +91 77450 62299
+            </a>
+          </div>
+        </div>
+
+        <aside class="contact-hero-card">
+          <div class="contact-hero-card-label">Gurukrupa Xerox</div>
+          <h2>And Soham Multiservices</h2>
+          <p>
+            A local point of contact for service enquiries and
+            administrative assistance, subject to service availability.
+          </p>
+
+          <div class="contact-hero-card-divider"></div>
+
+          <div class="contact-hero-card-address">
+            <div class="contact-location-symbol" aria-hidden="true">⌖</div>
+            <div>
+              <strong>Our Business Address</strong>
+              <span>
+                Plot No. 48, Balaji Nagar,<br>
+                New Bhokardan, Maharashtra 431114
+              </span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- Contact methods -->
+    <section class="contact-main-section">
+      <div class="contact-container">
+
+        <div class="contact-section-intro">
+          <span class="contact-section-kicker">Reach Us Directly</span>
+          <h2>How Can We Help You?</h2>
+          <p>
+            Choose the contact method that works best for you.
+            For faster assistance, briefly mention the service you
+            are enquiring about.
+          </p>
+        </div>
+
+        <div class="contact-methods">
+
+          <article class="contact-method">
+            <div class="contact-method-icon" aria-hidden="true">☎</div>
+            <h3>Give Us a Call</h3>
+            <p>
+              Prefer speaking directly? Call us to discuss your
+              requirement and check availability.
+            </p>
+            <a href="tel:+917745062299">
+              +91 77450 62299 →
             </a>
           </article>
 
-          <!-- Email -->
-          <article class="contact-detail-card">
-            <div class="contact-detail-icon" aria-hidden="true">✉</div>
-            <h3>Email Us</h3>
+          <article class="contact-method">
+            <div class="contact-method-icon" aria-hidden="true">✉</div>
+            <h3>WhatsApp Message</h3>
             <p>
-              For written enquiries, share a short description of your
-              requirement and your preferred way to receive a reply.
+              Send a written enquiry and explain what assistance
+              you are looking for.
             </p>
             <a
-              class="contact-action-link"
-              href="mailto:narayan.katore9@gmail.com?subject=Service%20Enquiry"
-            >
-              narayan.katore9@gmail.com →
-            </a>
-          </article>
-
-          <!-- Address -->
-          <article class="contact-detail-card contact-address-card">
-            <div class="contact-detail-icon" aria-hidden="true">⌖</div>
-            <h3>Visit Our Location</h3>
-            <p>
-              Plot No. 48, Balaji Nagar,<br>
-              New Bhokardan, Maharashtra 431114, India.
-            </p>
-            <a
-              class="contact-action-link"
-              href="https://www.google.com/maps/search/?api=1&query=Plot+No.+48%2C+Balaji+Nagar%2C+New+Bhokardan%2C+Maharashtra+431114"
+              href="https://wa.me/917745062299?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
             >
-              Find us on Google Maps →
+              Start a Conversation →
             </a>
           </article>
 
-        </div>
-
-        <!-- Opening hours placeholder -->
-        <div class="contact-hours-note">
-          <span class="hours-icon" aria-hidden="true">◷</span>
-          <div>
-            <h3>Opening Hours</h3>
+          <article class="contact-method">
+            <div class="contact-method-icon" aria-hidden="true">✉</div>
+            <h3>Send an Email</h3>
             <p>
-              Please contact us to confirm our current business hours and
-              availability before visiting. Published opening hours will be
-              added once confirmed.
+              Use email for written enquiries or to explain a
+              requirement in more detail.
             </p>
-          </div>
+            <a href="mailto:narayan.katore9@gmail.com?subject=Service%20Enquiry">
+              Send an Email →
+            </a>
+          </article>
+
         </div>
 
       </div>
     </section>
 
-    <!-- Map directions -->
-    <section class="contact-map-section" aria-labelledby="map-heading">
-      <div class="contact-page-container">
-        <div class="contact-map-panel">
+    <!-- Address and directions -->
+    <section class="contact-location-section">
+      <div class="contact-container">
 
-          <div class="contact-map-placeholder">
-            <div>
-              <div class="map-pin" aria-hidden="true">📍</div>
-              <p>
-                <strong>Gurukrupa Xerox And Soham Multiservices</strong><br>
-                Balaji Nagar, New Bhokardan, Maharashtra 431114
-              </p>
+        <div class="contact-location-layout">
+
+          <div class="contact-location-copy">
+            <span class="contact-section-kicker">Find Our Location</span>
+
+            <h2>Visit Us in New Bhokardan</h2>
+
+            <p>
+              Planning to visit in person? Use the address below to
+              find our listed location. Please confirm opening hours
+              and service availability before travelling.
+            </p>
+
+            <div class="contact-address-box">
+              <div class="contact-location-symbol" aria-hidden="true">⌖</div>
+              <div>
+                <h3>Gurukrupa Xerox And Soham Multiservices</h3>
+                <p>
+                  Plot No. 48, Balaji Nagar,<br>
+                  New Bhokardan,<br>
+                  Maharashtra 431114, India.
+                </p>
+              </div>
+            </div>
+
+            <a
+              class="contact-btn"
+              href="https://www.google.com/maps/search/?api=1&query=Plot+No.+48%2C+Balaji+Nagar%2C+New+Bhokardan%2C+Maharashtra+431114"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Google Maps <span aria-hidden="true">↗</span>
+            </a>
+
+            <div class="contact-hours">
+              <div class="contact-location-symbol" aria-hidden="true">◷</div>
+              <div>
+                <h3>Business Hours</h3>
+                <p>
+                  Opening hours have not yet been confirmed.
+                  Please call or message us before visiting.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="contact-map-content">
-            <h2 id="map-heading">Planning to Visit?</h2>
-            <p>
-              Open Google Maps for directions to our listed business address.
-              If you are travelling from another area, check the route before
-              starting your journey.
-            </p>
-            <a
-              class="btn btn-primary"
-              href="https://www.google.com/maps/search/?api=1&query=Plot+No.+48%2C+Balaji+Nagar%2C+New+Bhokardan%2C+Maharashtra+431114"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Directions →
-            </a>
+          <div class="contact-map-panel">
+            <div class="contact-map-inner">
+              <div class="contact-map-pin" aria-hidden="true">⌖</div>
+              <h3>New Bhokardan, Maharashtra</h3>
+              <p>
+                Plot No. 48, Balaji Nagar, New Bhokardan 431114.
+                Open the map to check directions.
+              </p>
+              <a
+                class="contact-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Plot+No.+48%2C+Balaji+Nagar%2C+New+Bhokardan%2C+Maharashtra+431114"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions ↗
+              </a>
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- Review-first service workflow -->
-    <section class="contact-page-section">
-      <div class="contact-page-container">
+    <!-- Enquiry call to action -->
+    <section class="contact-final-section">
+      <div class="contact-final-panel">
+        <span class="contact-eyebrow">Let's Get Started</span>
 
-        <div class="contact-review-panel">
-          <h2>Not Sure Which Service You Need?</h2>
-          <p>
-            Tell us what you are trying to do. We’ll review your enquiry,
-            confirm whether the service is available, explain the expected
-            charges and required information, and obtain your approval
-            before proceeding.
-          </p>
+        <h2>Tell Us What You Need</h2>
 
-          <div class="contact-review-actions">
-            <a href="service-request.html">Start a Service Enquiry</a>
-            <a
-              class="secondary"
-              href="https://wa.me/917745062299?text=Hello%2C%20I%20need%20help%20understanding%20which%20service%20I%20require."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ask on WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <p class="contact-disclaimer">
-          Gurukrupa Xerox And Soham Multiservices is an independent service
-          provider. It is not a government office and does not imply government
-          affiliation or endorsement. Government-related services, where
-          offered, are subject to eligibility, applicable rules and the
-          availability of authorized processes. Service availability, charges
-          and completion timelines must be confirmed before work begins.
+        <p>
+          Start with an enquiry. We’ll review your requirements,
+          confirm the service and charges, and seek your approval
+          before proceeding with the work.
         </p>
 
+        <div class="contact-final-actions">
+          <a class="contact-btn" href="service-request.html">
+            Make a Service Enquiry →
+          </a>
+
+          <a
+            class="contact-btn contact-btn-outline"
+            href="https://wa.me/917745062299?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20service%20requirement."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message Us on WhatsApp
+          </a>
+        </div>
       </div>
+
+      <p class="contact-legal-note">
+        Gurukrupa Xerox And Soham Multiservices is an independent
+        service provider, not a government office. Any government-related
+        assistance is subject to eligibility, applicable rules and
+        authorized processes. Service availability, charges and timelines
+        must be confirmed before work begins. Please do not send sensitive
+        identity documents through an unsecured channel unless the
+        required service and submission method have been confirmed.
+      </p>
     </section>
 
   </main>
@@ -595,8 +910,8 @@
           </span>
         </a>
         <p>
-          Practical service assistance, with clear communication and
-          customer approval before work proceeds.
+          Clear communication, practical assistance and customer
+          approval before work proceeds.
         </p>
       </div>
 
@@ -618,12 +933,12 @@
       </div>
 
       <div class="footer-contact">
-        <h3>Contact</h3>
+        <h3>Contact Details</h3>
         <a href="tel:+917745062299">+91 77450 62299</a>
         <a href="mailto:narayan.katore9@gmail.com">
           narayan.katore9@gmail.com
         </a>
-        <p>Balaji Nagar, New Bhokardan, Maharashtra 431114</p>
+        <p>Plot No. 48, Balaji Nagar, New Bhokardan, Maharashtra 431114</p>
       </div>
 
     </div>
